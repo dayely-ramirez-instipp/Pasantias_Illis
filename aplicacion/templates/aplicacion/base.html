@@ -1,0 +1,1550 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Modern Business - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100" style="margin: 0; padding: 0;">
+    <div class="d-flex gap-2">
+    <button class="btn flex-fill" type="button" style="background-color:rgb(255, 124, 196); color:#ffff;" data-bs-toggle="modal" data-bs-target="#editorModal">
+      <i class="bi bi-pencil-square"></i> Modo Editor
+    </button>
+  </div>
+
+        <main class="flex-shrink-0">
+           <div style="background-color: rgb(77, 37, 10); height: 40px; font-size: 15px; color: aliceblue; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+    <div>
+        <i class="bi bi-telephone-fill"></i> +593 0994111122
+        <i class="bi bi-whatsapp ms-3"></i> 0994111122
+    </div>
+    <div>
+        
+                <i class="bi bi-envelope-fill"></i> illiscakes6@gmail.com
+
+    </div>
+</div>
+ 
+
+<!-- MENU (agrega IDs a los elementos editables) -->
+<nav id="menuNav" class="navbar navbar-expand-lg navbar-dark" style="background-color: #f87ac8; position: relative; padding-bottom: 15px; margin-bottom: 0;">
+    <div class="container px-5">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="--hover-color: rgb(77, 10, 10);">
+                <li class="nav-item">
+                    <a class="nav-link" href="#scroll-target" style="transition: color 0.3s;" onmouseover="this.style.color='rgb(77, 10, 10)'" onmouseout="this.style.color=''">INICIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#productos" style="transition: color 0.3s;" onmouseover="this.style.color='rgb(77, 10, 10)'" onmouseout="this.style.color=''">PRODUCTOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#nosotros" style="transition: color 0.3s;" onmouseover="this.style.color='rgb(77, 10, 10)'" onmouseout="this.style.color=''">NOSOTROS</a>
+                </li>
+                <!-- Imagen o texto central -->
+                <li class="nav-item d-flex align-items-center px-2">
+                    <h1 id="menuTitle" style="font-size: 30px; font-family: 'Times New Roman', Times, serif;">ILLI'S CAKES</h1>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.instagram.com/illiscakes6?igsh=MTZwZjJqNXVrb29uMA==" style="transition: color 0.3s;" onmouseover="this.style.color='rgb(77, 10, 10)'" onmouseout="this.style.color=''">GALERIA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="transition: color 0.3s;" onmouseover="this.style.color='rgb(77, 10, 10)'" onmouseout="this.style.color=''">UBICACIÓN</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <a id="facebookLink" href="https://www.facebook.com/tupagina" target="_blank" class="text-white me-3" style="font-size: 1.2rem;">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a id="instagramLink" href="https://www.instagram.com/illiscakes6?igsh=MWs5dDZ3anJnMnJsNA==" target="_blank" class="text-white" style="font-size: 1.2rem;">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Borde ondulado inferior -->
+    <div style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 8px; background: #f87ac8; overflow: hidden; z-index: 10;">
+        <svg style="position: absolute; bottom: 0; left: 0; width: 100%; height: 8px;" viewBox="0 0 1200 8" preserveAspectRatio="none">
+            <path d="M 0 4 Q 10 0, 20 4 T 40 4 T 60 4 T 80 4 T 100 4 T 120 4 T 140 4 T 160 4 T 180 4 T 200 4 T 220 4 T 240 4 T 260 4 T 280 4 T 300 4 T 320 4 T 340 4 T 360 4 T 380 4 T 400 4 T 420 4 T 440 4 T 460 4 T 480 4 T 500 4 T 520 4 T 540 4 T 560 4 T 580 4 T 600 4 T 620 4 T 640 4 T 660 4 T 680 4 T 700 4 T 720 4 T 740 4 T 760 4 T 780 4 T 800 4 T 820 4 T 840 4 T 860 4 T 880 4 T 900 4 T 920 4 T 940 4 T 960 4 T 980 4 T 1000 4 T 1020 4 T 1040 4 T 1060 4 T 1080 4 T 1100 4 T 1120 4 T 1140 4 T 1160 4 T 1180 4 T 1200 4 L 1200 8 L 0 8 Z"/>
+        </svg>
+    </div>
+</nav>
+
+<!-- Borde inferior en zigzag -->
+<div style="height: 20px; background: linear-gradient(135deg, #f87ac8 25%, transparent 25%), linear-gradient(225deg, #f87ac8 25%, transparent 25%); background-size: 20px 20px; background-position: 0 0, 10px 0; margin-top: -20px; position: relative; z-index: 5;"></div>
+
+    <!-- Carrusel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: -0px;">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides del carrusel -->
+        <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+        <header class="py-3" style="position: relative; overflow: hidden; min-height: 500px;">
+            <img src="./img carrucel/descarga (9).jpeg" alt="Fondo"
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <!-- Capa oscura -->
+            <div style="background-color: rgba(77, 10, 10, 0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+
+            <div class="container px-5" style="position: relative; z-index: 2;">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Pastelerías Illi's Cakes</h1>
+                            <p class="lead fw-normal text-white-50 mb-4">Pastelería 100% Artesanal</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                        <img class="img-fluid rounded-3 my-5" src="./img carrucel/WhatsApp Image 2025-05-25 at 10.36.24 AM.png"
+                             alt="..." style="width: 90%; height: 400px; object-fit: cover;" />
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+        <header class="py-5" style="position: relative; overflow: hidden; min-height: 500px;">
+            <img src="./img carrucel/descarga (9).jpeg" alt="Fondo 2"
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <div style="background-color: rgba(77, 10, 10, 0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+
+            <div class="container px-5" style="position: relative; z-index: 2;">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Innovación y Sabor</h1>
+                            <p class="lead fw-normal text-white-50 mb-4">En Illi’s Cakes combinamos creatividad y calidad para ofrecerte los mejores productos artesanales.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                        <img class="img-fluid rounded-3 my-5" src="./img carrucel/🪷.jpeg"
+                             alt="..." style="width: 90%; height: 300px; object-fit: cover;" />
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+        <header class="py-5" style="position: relative; overflow: hidden; min-height: 500px;">
+            <img src="./img carrucel/descarga (9).jpeg" alt="Fondo 3"
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            <div style="background-color: rgba(77, 10, 10, 0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+
+            <div class="container px-5" style="position: relative; z-index: 2;">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Compromiso y Calidad</h1>
+                            <p class="lead fw-normal text-white-50 mb-4">Ofrecemos productos 100 % confiables y personalizados, con un sabor que marca la diferencia.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                        <img class="img-fluid rounded-3 my-5" src="./img carrucel/𝒜𝓃𝒶 ℛℴ𝓈𝒶.jpeg"
+                             alt="..." style="width: 90%; height: 300px; object-fit: cover;"/>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+
+<!-- Controles -->
+<button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+</button>
+ <!-- LINEA DE TEXTO -->
+
+               <h4 style="background-color: rgb(77, 10, 10); color: #ffff; font-family: 'Times New Roman', Times, serif; padding: 0px; margin-bottom: 0; font-size: 20px; text-align: center;">
+PASTELES-MINI TORTAS-DONUS-BOCADITOS-CAKES-DULCE-PERSONALIZABLE-FRESCO-NATURAL-RAPIDO-BUENO-BONITO-BARATO
+</h4>
+</div>
+<!-- BIENVENIDA-->
+
+<section class="py-2" id="scroll-target" style="background-color: #ffa4dcd3; margin-top: 0; padding-top: 0;">
+    <div class="container-fluid px-0">
+        <div class="row gx-0 align-items-center">
+            <div class="col-lg-6 px-0">
+                <img class="img-fluid rounded-0 mb-5 mb-lg-0" src="./img bienvenida/𝒜𝓃𝒶 ℛℴ𝓈𝒶.jpeg" alt="..." style="width: 100%; height: 400px; object-fit: cover;" />
+            </div>
+            <div class="col-lg-6 px-4">
+                <h2 class="fw-bolder" style="color: rgb(0, 0, 0) ; font-family: 'Times New Roman', Times, serif;">Bienvenidos a pastelerias Illi's Cakes</h2>
+                <p style="color: #000000;">Nos encanta recibirte en nuestra pastelería, un lugar donde cada detalle está pensado para endulzar tus momentos especiales. Elaboramos nuestros productos con ingredientes frescos, pasión y dedicación, para ofrecerte sabores únicos que conquistan corazones. ¡Gracias por elegirnos y permitirnos ser parte de tus celebraciones más dulces!</p>
+            </div>
+        </div>
+    </div>
+</section>
+            <br>
+            <!-- ICONOS -->
+
+            <section class="py" id="features">
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col mb-5 h-100"style="text-align: center;">
+                                    <div class="imagen1"><img src="./iconos/flor-tulipan.png" alt=""style="width: 100px; height: 100px; object-fit: cover;"></div>
+                                    <h2 class="h5">Ingredientes  <br> 100% frescos</h2>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3"style="text-align: center;">
+                                    <div class="imagen2"><img src="./iconos/lado-del-camion.png" alt=""style="width: 100px; height: 100px; object-fit: cover;"></div>
+                                    <h2 class="h5">Entregas  <br> Seguras</h2>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3" style="text-align: center;">
+                                    <div class="imagen3"><img src="./iconos/hucha.png" alt=""style="width: 100px; height: 100px; object-fit: cover;"></div>
+                                    <h2 class="h5">Pagos <br> Seguros</h2>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-3" style="text-align: center;">
+                                    <div class="imagen4"><img src="./iconos/anadir-al-carrito-de-la-compra.png" alt="" style="width: 100px; height: 100px; object-fit: cover;"></div>
+                                    <h2 class="h5">Productos  <br> 100% personalizables</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PRODUCTOS -->
+
+<section style="width: 100%; background-color: #ffa4dcd3;" id="productos">
+  <div class="row g-0 align-items-center" style="min-height: 300px;">
+    <!-- Columna de 3 imágenes -->
+    <div class="col-md-6">
+      <div class="row g-0">
+        <div class="col-4">
+          <img src="./productos/torta.jpeg" alt="Pastel 1" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga.jpeg" alt="Pastel 2" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/Cottage Cakes - Connecting Bakers with Eaters.jpeg" alt="Pastel 3" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Columna de texto -->
+    <div class="col-md-6 d-flex align-items-center" style="height: 300px;">
+      <div class="p-3">
+        <h3 class="fw-bold" style="color: #1f0f01; font-family: 'Times New Roman', Times, serif;">PASTELES</h3>
+        <p class="fs-6 mb-2" style="color: #1f0f01;">Nuestros pasteles son el resultado perfecto entre sabor, calidad y amor por la repostería. Cada uno está elaborado con ingredientes frescos y seleccionados, cuidando cada detalle para ofrecerte una experiencia dulce e inolvidable. Ya sea para un cumpleaños, una ocasión especial o simplemente para darte un gusto, nuestros pasteles te conquistarán con su suavidad, aroma y delicioso sabor casero. ¡Endulza tus momentos con el toque único de nuestros pasteles!</p>
+        <a href="#" class="btn" 
+           style="border: 2px solid #1f0f01; color: #1f0f01;" 
+           onmouseover="this.style.backgroundColor='#1f0f01'; this.style.color='white';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1f0f01';">
+           Ver más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="width: 100%; background-color: rgba(241, 199, 227, 0.603);;">
+  <div class="row g-0 align-items-center flex-md-row-reverse" style="min-height: 300px;">
+    <!-- Columna de 3 imágenes -->
+    <div class="col-md-6">
+      <div class="row g-0">
+        <div class="col-4">
+          <img src="./productos/Choco flan.jpeg" alt="Mini torta 1" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga (5).jpeg" alt="Mini torta 2" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga (6).jpeg" alt="Mini torta 3" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Columna de texto -->
+    <div class="col-md-6 d-flex align-items-center" style="height: 300px;">
+      <div class="p-3">
+        <h3 class="fw-bold" style="color: #1f0f01; font-family: 'Times New Roman', Times, serif;">BOCADITOS Y POSTRES </h3>
+        <p class="fs-6 mb-2" style="color: #1f0f01;">Bocaditos perfectos para todo tipo de eventos, combinan sabor, frescura y una presentación encantadora que sorprenderá a tus invitados. Hechos con ingredientes de la mejor calidad, cada bocadito es una pequeña explosión de dulzura y alegría. ¡Haz de cada ocasión un momento especial con nuestros irresistibles bocaditos!</p>
+        <a href="#" class="btn" 
+           style="border: 2px solid #1f0f01; color: #1f0f01;" 
+           onmouseover="this.style.backgroundColor='#1f0f01'; this.style.color='white';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1f0f01';">
+           Ver más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="width: 100%; background-color: #ffa4dcd3;" id="productos">
+  <div class="row g-0 align-items-center" style="min-height: 300px;">
+    <!-- Columna de 3 imágenes -->
+    <div class="col-md-6">
+      <div class="row g-0">
+        <div class="col-4">
+          <img src="./productos/Opera Cake.jpeg" alt="Pastel 1" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga (1).jpeg" alt="Pastel 2" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga (2).jpeg" alt="Pastel 3" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Columna de texto -->
+    <div class="col-md-6 d-flex align-items-center" style="height: 300px;">
+      <div class="p-3">
+        <h3 class="fw-bold" style="color: #1f0f01; font-family: 'Times New Roman', Times, serif;" >CAKES</h3>
+        <p style="font-size: 0.9rem; color: #1f0f01;">
+Nuestros cakes son una experiencia dulce hecha a tu medida. Con diseños creativos, sabores irresistibles y una presentación que enamora, transformamos cada pastel en una obra deliciosa y original. Son 100 % personalizables, perfectos para expresar tu estilo y darle un toque especial a cualquier celebración. ¡Celebra con un cake único, divertido y lleno de sabor!</p>
+        <a href="#" class="btn" 
+           style="border: 2px solid #1f0f01; color: #1f0f01;" 
+           onmouseover="this.style.backgroundColor='#1f0f01'; this.style.color='white';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1f0f01';">
+           Ver más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="width: 100%; background-color: #ffff;">
+  <div class="row g-0 align-items-center flex-md-row-reverse" style="min-height: 300px;">
+    <!-- Columna de 3 imágenes -->
+    <div class="col-md-6">
+      <div class="row g-0">
+        <div class="col-4">
+          <img src="./productos/Torta flork mamá 🧑.jpeg" alt="Mini torta 1" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga (3).jpeg" alt="Mini torta 2" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+        <div class="col-4">
+          <img src="./productos/descarga (4).jpeg" alt="Mini torta 3" class="img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        </div>
+      </div>
+    </div>
+    
+    <!-- Columna de texto -->
+    <div class="col-md-6 d-flex align-items-center" style="height: 300px; background-color: rgba(241, 199, 227, 0.603);">
+      <div class="p-3">
+        <h3 class="fw-bold" style="color: #000000; font-family: 'Times New Roman', Times, serif;">MINI TORTAS</h3>
+        <p class="fs-6 mb-2" style="color: #000000;">Nuestras mini tortas son divertidas, deliciosas y 100% personalizables. Puedes elegir los sabores, colores y decoraciones que más te gusten para que cada mini torta sea única, ¡como tú! Perfectas para fiestas, regalos o simplemente para disfrutar un momento dulce y especia</p>
+        <a href="#" class="btn" 
+           style="border: 2px solid #000000; color: #000000;" 
+           onmouseover="this.style.backgroundColor='#1f0f01'; this.style.color='white';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1f0f01';">
+           Ver más
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- HISTORIA -->
+
+<div class="card border-0" style="height: 300px; overflow: hidden; background-color: rgb(77, 37, 10);" id="nosotros">
+  <img src="./img sobre nosotros/descarga (7).jpeg" class="card-img" alt="Panadería artesanal" style="object-fit: cover; height: 100%;">
+  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+  <h5 class="card-title fs-4 fw-bold mb-1" style="color: #ffff; font-family: 'Times New Roman', Times, serif;">MAS SOBRE NOSOTROS</h5>
+<div class="d-flex justify-content-center gap-3 flex-wrap pt-2 px-4 pb-4">
+    <div class="card card-custom text-center" style="max-width: 18rem; background-color: #cba1d87a; color: #ffff;">
+      <div class="card-header fw-bold"><img src="./img sobre nosotros/bulbo.png" alt="" style="width: 50px; height: 50px; object-fit: cover;"></div>
+      <div class="card-body">
+        <h5 class="card-title">INICIOS</h5>
+        <p class="card-text">Texto de ejemplo para esta tarjeta de muestra.</p>
+      </div>
+    </div>
+
+    <div class="card card-custom text-center" style="max-width: 18rem; background-color: #cba1d87a; color: #ffff;">
+      <div class="card-header fw-bold"><img src="./img sobre nosotros/destellos.png" alt="" style="width: 50px; height: 50px; object-fit: cover;"></div>
+      <div class="card-body">
+        <h5 class="card-title">ACTUALIDAD</h5>
+        <p class="card-text">Illi’s Cakes es una de las mejores pastelerías de El Oro, reconocida por su calidad, sabor y dedicación en cada creación.
+</p>
+      </div>
+    </div>
+
+    <div class="card card-custom text-center" style="max-width: 18rem; background-color: #cba1d87a; color: #ffff;">
+      <div class="card-header fw-bold"><img src="./img sobre nosotros/apreton-de-manos.png" alt="" style="width: 50px; height: 50px; object-fit: cover;"></div>
+      <div class="card-body">
+        <h5 class="card-title">COMPROMISO</h5>
+        <p class="card-text">En Illi’s Cakes mejoramos cada día para ofrecerte calidad, sabor y dedicación en cada producto.
+</p>
+      </div>
+    </div>
+    </div>
+</div>  </div>
+</div>
+            <!-- Testimonio-->
+            <div class="py">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">Los productos de Illi’s Cakes son 100 % confiables, personalizables y elaborados con los más altos estándares de calidad. Cada detalle está cuidadosamente pensado para ofrecerte sabores únicos, frescura garantizada y presentaciones encantadoras. Nos apasiona crear experiencias dulces que reflejen tu estilo y superen tus expectativas. En cada torta, cake o bocadito, encontrarás dedicación, creatividad y amor por lo que hacemos. ¡En Illi’s Cakes, la calidad y el sabor se disfrutan en cada bocado.</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="./img sobre nosotros/Dolmas sob medida.jpeg" alt="..." style="width: 50px; height: 50px; object-fit: cover;" />
+                                    <div class="fw-bold">
+                                        Illeana loayza
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!-- UBICACION-->
+                   <aside class="rounded-3 p-4 p-sm-5 mt-5 text-white" style="background-color:  #ff43c77a" id="UBICACION">
+  <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+    <div class="mb-4 mb-xl-0">
+      <div class="fs-3 fw-bold">Nuevos productos, entregados para ti.</div>
+      <div class="text-white-50">Encuentranos en...</div>
+    </div>
+    <div class="ms-xl-4">
+        <i class="bi bi-geo-alt-fill">Cdla. Las Brisas MzA12 V2, Machala,</i>
+  </div>
+</aside>
+        <!-- Footer-->
+        <footer class=" py-4 mt-auto" style="background-color:  rgb(77, 37, 10);;">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Progming; Your Website 2025</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+                          
+                                                  <!-- Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="modal fade" id="editorModal" tabindex="-1" aria-labelledby="editorModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #f87ac8; color: white;">
+          <h5 class="modal-title" id="editorModalLabel"><i class="bi bi-gear-fill"></i> Modo Editor</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body" id="modalBody" style="max-height: 70vh; overflow-y: auto;">
+          <!-- Sección de Edición -->
+          <div id="editSection">
+            
+            <!-- ===== EDITAR ENCABEZADO ===== -->
+            <h5 class="mb-3 mt-3"><i class="bi bi-info-circle-fill text-primary"></i> Editar Encabezado</h5>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="bgColorInput" class="form-label">Color de fondo:</label>
+                <input type="color" class="form-control form-control-color w-100" id="bgColorInput" value="#4d250a">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="phoneInput" class="form-label">Teléfono:</label>
+                <input type="text" class="form-control" id="phoneInput" value="+593 0994111122">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="whatsappInput" class="form-label">WhatsApp:</label>
+                <input type="text" class="form-control" id="whatsappInput" value="0994111122">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="emailInput" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="emailInput" value="illiscakes6@gmail.com">
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- ===== EDITAR MENÚ ===== -->
+            <h5 class="mb-3"><i class="bi bi-menu-button-wide-fill text-success"></i> Editar Menú</h5>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="menuTitleInput" class="form-label">Nombre del negocio:</label>
+                <input type="text" class="form-control" id="menuTitleInput" value="ILLI'S CAKES">
+              </div>
+              <div class="col-md-2 mb-3">
+                <label for="menuColorInput" class="form-label">Color del menú:</label>
+                <input type="color" class="form-control form-control-color w-100" id="menuColorInput" value="#f87ac8">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="facebookInput" class="form-label">Facebook:</label>
+                <input type="url" class="form-control" id="facebookInput" value="https://www.facebook.com/tupagina">
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="instagramInput" class="form-label">Instagram:</label>
+                <input type="url" class="form-control" id="instagramInput" value="https://www.instagram.com/illiscakes6">
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+             <!-- ===== EDITAR CARRUSEL ===== -->
+            <h5 class="mb-3"><i class="bi bi-images text-danger"></i> Editar Carrusel</h5>
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Slide 1</span>
+              
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen de fondo:</label>
+                  <div class="upload-area">
+                    <input type="file" id="bgImage1" accept="image/*" class="form-control">
+                  </div>
+                  <div id="bgImage1Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"><i class="bi bi-card-image"></i> Imagen superior:</label>
+                  <div class="upload-area">
+                    <input type="file" id="topImage1" accept="image/*" class="form-control">
+                  </div>
+                  <div id="topImage1Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="overlayColor1" class="form-label">Color capa oscura:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="overlayColor1" value="#4d0a0a">
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="overlayOpacity1" class="form-label">Opacidad (<span id="opacity1Value">60</span>%):</label>
+                  <input type="range" class="form-range" id="overlayOpacity1" min="0" max="100" value="60">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="fontFamily1" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="fontFamily1">
+                    <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="title1" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="title1" value="Pastelerías Illi's Cakes">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="text1" class="form-label">Texto:</label>
+                  <input type="text" class="form-control" id="text1" value="Pastelería 100% Artesanal">
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Slide 2</span>
+              
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen de fondo:</label>
+                  <div class="upload-area">
+                    <input type="file" id="bgImage2" accept="image/*" class="form-control">
+                  </div>
+                  <div id="bgImage2Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"><i class="bi bi-card-image"></i> Imagen superior:</label>
+                  <div class="upload-area">
+                    <input type="file" id="topImage2" accept="image/*" class="form-control">
+                  </div>
+                  <div id="topImage2Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="overlayColor2" class="form-label">Color capa oscura:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="overlayColor2" value="#4d0a0a">
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="overlayOpacity2" class="form-label">Opacidad (<span id="opacity2Value">60</span>%):</label>
+                  <input type="range" class="form-range" id="overlayOpacity2" min="0" max="100" value="60">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="fontFamily2" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="fontFamily2">
+                    <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="title2" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="title2" value="Innovación y Sabor">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="text2" class="form-label">Texto:</label>
+                  <input type="text" class="form-control" id="text2" value="En Illi's Cakes combinamos creatividad y calidad para ofrecerte los mejores productos artesanales.">
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Slide 3</span>
+              
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen de fondo:</label>
+                  <div class="upload-area">
+                    <input type="file" id="bgImage3" accept="image/*" class="form-control">
+                  </div>
+                  <div id="bgImage3Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label class="form-label"><i class="bi bi-card-image"></i> Imagen superior:</label>
+                  <div class="upload-area">
+                    <input type="file" id="topImage3" accept="image/*" class="form-control">
+                  </div>
+                  <div id="topImage3Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="overlayColor3" class="form-label">Color capa oscura:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="overlayColor3" value="#4d0a0a">
+                </div>
+
+                <div class="col-md-3 mb-3">
+                  <label for="overlayOpacity3" class="form-label">Opacidad (<span id="opacity3Value">60</span>%):</label>
+                  <input type="range" class="form-range" id="overlayOpacity3" min="0" max="100" value="60">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="fontFamily3" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="fontFamily3">
+                    <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="title3" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="title3" value="Compromiso y Calidad">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="text3" class="form-label">Texto:</label>
+                  <input type="text" class="form-control" id="text3" value="Ofrecemos productos 100 % confiables y personalizados, con un sabor que marca la diferencia.">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ===== VISTA PREVIA ===== -->
+          <div id="previewSection" style="display: none;">
+            <h6><i class="bi bi-eye-fill"></i> Vista previa del Encabezado:</h6>
+            <div id="headerPreview" style="background-color: rgb(77, 37, 10); height: 40px; font-size: 15px; color: aliceblue; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
+              <div>
+                <i class="bi bi-telephone-fill"></i> <span id="previewPhone">+593 0994111122</span>
+                <i class="bi bi-whatsapp ms-3"></i> <span id="previewWhatsapp">0994111122</span>
+              </div>
+              <div>
+                <i class="bi bi-envelope-fill"></i> <span id="previewEmail">illiscakes6@gmail.com</span>
+              </div>
+            </div>
+
+            <h6 class="mt-4"><i class="bi bi-menu-button-wide"></i> Vista previa del Menú:</h6>
+            <nav id="menuPreview" class="navbar navbar-expand-lg navbar-dark" style="background-color: #f87ac8;">
+              <div class="container px-5">
+                <div class="collapse navbar-collapse show">
+                  <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">PRODUCTOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">NOSOTROS</a></li>
+                    <li class="nav-item d-flex align-items-center px-2">
+                      <h1 id="previewMenuTitle" style="font-size: 30px; font-family: 'Times New Roman', Times, serif; margin: 0;">ILLI'S CAKES</h1>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">GALERÍA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">UBICACIÓN</a></li>
+                  </ul>
+                  <div class="d-flex align-items-center">
+                    <a id="previewFacebookLink" href="#" target="_blank" class="text-white me-3" style="font-size: 1.2rem;"><i class="bi bi-facebook"></i></a>
+                    <a id="previewInstagramLink" href="#" target="_blank" class="text-white" style="font-size: 1.2rem;"><i class="bi bi-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+            <h6 class="mt-4"><i class="bi bi-images"></i> Vista previa del Carrusel:</h6>
+            <div id="carouselPreviewContainer" class="carousel slide" data-bs-ride="carousel" style="border-radius: 8px; overflow: hidden;">
+              <!-- Indicadores -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPreviewContainer" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselPreviewContainer" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselPreviewContainer" data-bs-slide-to="2"></button>
+              </div>
+
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div id="slidePreview1" style="height: 300px; position: relative;"></div>
+                </div>
+                <div class="carousel-item">
+                  <div id="slidePreview2" style="height: 300px; position: relative;"></div>
+                </div>
+                <div class="carousel-item">
+                  <div id="slidePreview3" style="height: 300px; position: relative;"></div>
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselPreviewContainer" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselPreviewContainer" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+          <!-- ===== EDITAR LÍNEA DE TEXTO ===== -->
+            <h5 class="mb-3"><i class="bi bi-fonts text-warning"></i> Editar Línea de Texto</h5>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="textLineContent" class="form-label">Contenido del texto:</label>
+                <textarea class="form-control" id="textLineContent" rows="2">PASTELES-MINI TORTAS-DONUS-BOCADITOS-CAKES-DULCE-PERSONALIZABLE-FRESCO-NATURAL-RAPIDO-BUENO-BONITO-BARATO</textarea>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="textLineBgColor" class="form-label">Color de fondo:</label>
+                <input type="color" class="form-control form-control-color w-100" id="textLineBgColor" value="#4d0a0a">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="textLineColor" class="form-label">Color del texto:</label>
+                <input type="color" class="form-control form-control-color w-100" id="textLineColor" value="#ffffff">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="textLineFontFamily" class="form-label">Tipo de letra:</label>
+                <select class="form-select" id="textLineFontFamily">
+                  <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                  <option value="Arial, sans-serif">Arial</option>
+                  <option value="'Courier New', monospace">Courier New</option>
+                  <option value="Georgia, serif">Georgia</option>
+                  <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                  <option value="'Lucida Console', monospace">Lucida Console</option>
+                  <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                  <option value="Verdana, sans-serif">Verdana</option>
+                </select>
+              </div>
+            </div>
+           <!-- ===== EDITAR SECCIÓN BIENVENIDA ===== -->
+            <h5 class="mb-3"><i class="bi bi-house-heart-fill text-info"></i> Editar Sección Bienvenida</h5>
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label class="form-label"><i class="bi bi-image"></i> Imagen de bienvenida:</label>
+                <div class="upload-area">
+                  <input type="file" id="welcomeImage" accept="image/*" class="form-control">
+                </div>
+                <div id="welcomeImageName" class="text-muted small mt-2" style="display: none;"></div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="welcomeBgColor" class="form-label">Color de fondo:</label>
+                <input type="color" class="form-control form-control-color w-100" id="welcomeBgColor" value="#ffa4dc">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="welcomeTextColor" class="form-label">Color del texto:</label>
+                <input type="color" class="form-control form-control-color w-100" id="welcomeTextColor" value="#000000">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="welcomeFontFamily" class="form-label">Tipo de letra:</label>
+                <select class="form-select" id="welcomeFontFamily">
+                  <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                  <option value="Arial, sans-serif">Arial</option>
+                  <option value="'Courier New', monospace">Courier New</option>
+                  <option value="Georgia, serif">Georgia</option>
+                  <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                  <option value="'Lucida Console', monospace">Lucida Console</option>
+                  <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                  <option value="Verdana, sans-serif">Verdana</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="welcomeTitle" class="form-label">Título:</label>
+                <input type="text" class="form-control" id="welcomeTitle" value="Bienvenidos a pastelerias Illi's Cakes">
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="welcomeText" class="form-label">Texto de bienvenida:</label>
+                <textarea class="form-control" id="welcomeText" rows="3">Nos encanta recibirte en nuestra pastelería, un lugar donde cada detalle está pensado para endulzar tus momentos especiales. Elaboramos nuestros productos con ingredientes frescos, pasión y dedicación, para ofrecerte sabores únicos que conquistan corazones. ¡Gracias por elegirnos y permitirnos ser parte de tus celebraciones más dulces!</textarea>
+              </div>
+            </div>
+
+<!-- ===== EDITAR ICONOS/CARACTERÍSTICAS ===== -->
+            <h5 class="mb-3"><i class="bi bi-star-fill text-primary"></i> Editar Iconos de Características</h5>
+            
+            <!-- ICONO 1 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Icono 1</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen del icono:</label>
+                  <div class="upload-area">
+                    <input type="file" id="icon1Image" accept="image/*" class="form-control">
+                  </div>
+                  <div id="icon1ImageName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="icon1Text" class="form-label">Texto del icono:</label>
+                  <textarea class="form-control" id="icon1Text" rows="2">Ingredientes  
+100% frescos</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- ICONO 2 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Icono 2</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen del icono:</label>
+                  <div class="upload-area">
+                    <input type="file" id="icon2Image" accept="image/*" class="form-control">
+                  </div>
+                  <div id="icon2ImageName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="icon2Text" class="form-label">Texto del icono:</label>
+                  <textarea class="form-control" id="icon2Text" rows="2">Entregas  
+Seguras</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- ICONO 3 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Icono 3</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen del icono:</label>
+                  <div class="upload-area">
+                    <input type="file" id="icon3Image" accept="image/*" class="form-control">
+                  </div>
+                  <div id="icon3ImageName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="icon3Text" class="form-label">Texto del icono:</label>
+                  <textarea class="form-control" id="icon3Text" rows="2">Pagos 
+Seguros</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- ICONO 4 -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Icono 4</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen del icono:</label>
+                  <div class="upload-area">
+                    <input type="file" id="icon4Image" accept="image/*" class="form-control">
+                  </div>
+                  <div id="icon4ImageName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="icon4Text" class="form-label">Texto del icono:</label>
+                  <textarea class="form-control" id="icon4Text" rows="2">Productos  
+100% personalizables</textarea>
+                </div>
+              </div>
+            </div>
+
+                        <!-- ===== EDITAR PRODUCTOS ===== -->
+            <h5 class="mb-3"><i class="bi bi-box-seam-fill text-success"></i> Editar Sección Productos</h5>
+            
+            <!-- PRODUCTO 1 - PASTELES -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Producto 1 - PASTELES</span>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 1:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product1Image1" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product1Image1Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 2:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product1Image2" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product1Image2Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 3:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product1Image3" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product1Image3Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product1BgColor" class="form-label">Color de fondo:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="product1BgColor" value="#ffa4dc">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product1FontFamily" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="product1FontFamily">
+                    <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product1Title" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="product1Title" value="PASTELES">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="product1Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="product1Text" rows="3">Nuestros pasteles son el resultado perfecto entre sabor, calidad y amor por la repostería. Cada uno está elaborado con ingredientes frescos y seleccionados, cuidando cada detalle para ofrecerte una experiencia dulce e inolvidable. Ya sea para un cumpleaños, una ocasión especial o simplemente para darte un gusto, nuestros pasteles te conquistarán con su suavidad, aroma y delicioso sabor casero. ¡Endulza tus momentos con el toque único de nuestros pasteles!</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 2 - BOCADITOS Y POSTRES -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Producto 2 - BOCADITOS Y POSTRES</span>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 1:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product2Image1" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product2Image1Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 2:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product2Image2" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product2Image2Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 3:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product2Image3" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product2Image3Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product2BgColor" class="form-label">Color de fondo:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="product2BgColor" value="#f1c7e3">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product2FontFamily" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="product2FontFamily">
+                    <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product2Title" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="product2Title" value="BOCADITOS Y POSTRES">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="product2Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="product2Text" rows="3">Bocaditos perfectos para todo tipo de eventos, combinan sabor, frescura y una presentación encantadora que sorprenderá a tus invitados. Hechos con ingredientes de la mejor calidad, cada bocadito es una pequeña explosión de dulzura y alegría. ¡Haz de cada ocasión un momento especial con nuestros irresistibles bocaditos!</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 3 - CAKES -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Producto 3 - CAKES</span>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 1:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product3Image1" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product3Image1Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 2:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product3Image2" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product3Image2Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 3:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product3Image3" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product3Image3Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product3BgColor" class="form-label">Color de fondo:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="product3BgColor" value="#ffa4dc">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product3FontFamily" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="product3FontFamily">
+                    <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product3Title" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="product3Title" value="CAKES">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="product3Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="product3Text" rows="3">Nuestros cakes son una experiencia dulce hecha a tu medida. Con diseños creativos, sabores irresistibles y una presentación que enamora, transformamos cada pastel en una obra deliciosa y original. Son 100 % personalizables, perfectos para expresar tu estilo y darle un toque especial a cualquier celebración. ¡Celebra con un cake único, divertido y lleno de sabor!</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRODUCTO 4 - MINI TORTAS -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Producto 4 - MINI TORTAS</span>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 1:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product4Image1" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product4Image1Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 2:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product4Image2" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product4Image2Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Imagen 3:</label>
+                  <div class="upload-area">
+                    <input type="file" id="product4Image3" accept="image/*" class="form-control">
+                  </div>
+                  <div id="product4Image3Name" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product4BgColor" class="form-label">Color de fondo:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="product4BgColor" value="#f1c7e3">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product4FontFamily" class="form-label">Tipo de letra:</label>
+                  <select class="form-select" id="product4FontFamily">
+                    <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                    <option value="'Lucida Console', monospace">Lucida Console</option>
+                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                  </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="product4Title" class="form-label">Título:</label>
+                  <input type="text" class="form-control" id="product4Title" value="MINI TORTAS">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="product4Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="product4Text" rows="3">Nuestras mini tortas son divertidas, deliciosas y 100% personalizables. Puedes elegir los sabores, colores y decoraciones que más te gusten para que cada mini torta sea única, ¡como tú! Perfectas para fiestas, regalos o simplemente para disfrutar un momento dulce y especial.</textarea>
+                </div>
+              </div>
+            </div>
+<!-- ===== EDITAR HISTORIA/NOSOTROS ===== -->
+            <h5 class="mb-3"><i class="bi bi-book-fill text-info"></i> Editar Sección "Sobre Nosotros"</h5>
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label"><i class="bi bi-image"></i> Imagen de fondo:</label>
+                <div class="upload-area">
+                  <input type="file" id="historyBgImage" accept="image/*" class="form-control">
+                </div>
+                <div id="historyBgImageName" class="text-muted small mt-2" style="display: none;"></div>
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <label for="historyOverlayColor" class="form-label">Color de capa oscura:</label>
+                <input type="color" class="form-control form-control-color w-100" id="historyOverlayColor" value="#000000">
+              </div>
+
+              <div class="col-md-3 mb-3">
+                <label for="historyOverlayOpacity" class="form-label">Opacidad (<span id="historyOpacityValue">40</span>%):</label>
+                <input type="range" class="form-range" id="historyOverlayOpacity" min="0" max="100" value="40">
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="historyMainTitle" class="form-label">Título principal:</label>
+                <input type="text" class="form-control" id="historyMainTitle" value="MAS SOBRE NOSOTROS">
+              </div>
+            </div>
+
+            <hr class="my-3">
+
+            <!-- TARJETA 1 - INICIOS -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Tarjeta 1 - INICIOS</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Icono de la tarjeta:</label>
+                  <div class="upload-area">
+                    <input type="file" id="historyCard1Icon" accept="image/*" class="form-control">
+                  </div>
+                  <div id="historyCard1IconName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard1BgColor" class="form-label">Color de fondo de tarjeta:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="historyCard1BgColor" value="#cba1d8">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard1Title" class="form-label">Subtítulo:</label>
+                  <input type="text" class="form-control" id="historyCard1Title" value="INICIOS">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard1Opacity" class="form-label">Opacidad tarjeta (<span id="card1OpacityValue">48</span>%):</label>
+                  <input type="range" class="form-range" id="historyCard1Opacity" min="0" max="100" value="48">
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label for="historyCard1Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="historyCard1Text" rows="2">Texto de ejemplo para esta tarjeta de muestra.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- TARJETA 2 - ACTUALIDAD -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Tarjeta 2 - ACTUALIDAD</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Icono de la tarjeta:</label>
+                  <div class="upload-area">
+                    <input type="file" id="historyCard2Icon" accept="image/*" class="form-control">
+                  </div>
+                  <div id="historyCard2IconName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard2BgColor" class="form-label">Color de fondo de tarjeta:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="historyCard2BgColor" value="#cba1d8">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard2Title" class="form-label">Subtítulo:</label>
+                  <input type="text" class="form-control" id="historyCard2Title" value="ACTUALIDAD">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard2Opacity" class="form-label">Opacidad tarjeta (<span id="card2OpacityValue">48</span>%):</label>
+                  <input type="range" class="form-range" id="historyCard2Opacity" min="0" max="100" value="48">
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label for="historyCard2Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="historyCard2Text" rows="2">Illi's Cakes es una de las mejores pastelerías de El Oro, reconocida por su calidad, sabor y dedicación en cada creación.</textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- TARJETA 3 - COMPROMISO -->
+            <div class="carousel-edit-section">
+              <span class="slide-number">Tarjeta 3 - COMPROMISO</span>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label"><i class="bi bi-image"></i> Icono de la tarjeta:</label>
+                  <div class="upload-area">
+                    <input type="file" id="historyCard3Icon" accept="image/*" class="form-control">
+                  </div>
+                  <div id="historyCard3IconName" class="text-muted small mt-2" style="display: none;"></div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard3BgColor" class="form-label">Color de fondo de tarjeta:</label>
+                  <input type="color" class="form-control form-control-color w-100" id="historyCard3BgColor" value="#cba1d8">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard3Title" class="form-label">Subtítulo:</label>
+                  <input type="text" class="form-control" id="historyCard3Title" value="COMPROMISO">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                  <label for="historyCard3Opacity" class="form-label">Opacidad tarjeta (<span id="card3OpacityValue">48</span>%):</label>
+                  <input type="range" class="form-range" id="historyCard3Opacity" min="0" max="100" value="48">
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label for="historyCard3Text" class="form-label">Descripción:</label>
+                  <textarea class="form-control" id="historyCard3Text" rows="2">En Illi's Cakes mejoramos cada día para ofrecerte calidad, sabor y dedicación en cada producto.</textarea>
+                </div>
+              </div>
+            </div>
+<!-- ===== EDITAR TESTIMONIO ===== -->
+            <h5 class="mb-3"><i class="bi bi-chat-quote-fill text-warning"></i> Editar Testimonio</h5>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label"><i class="bi bi-image"></i> Foto de perfil:</label>
+                <div class="upload-area">
+                  <input type="file" id="testimonialImage" accept="image/*" class="form-control">
+                </div>
+                <div id="testimonialImageName" class="text-muted small mt-2" style="display: none;"></div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="testimonialFontFamily" class="form-label">Tipo de letra:</label>
+                <select class="form-select" id="testimonialFontFamily">
+                  <option value="'Times New Roman', Times, serif" selected>Times New Roman</option>
+                  <option value="Arial, sans-serif">Arial</option>
+                  <option value="'Courier New', monospace">Courier New</option>
+                  <option value="Georgia, serif">Georgia</option>
+                  <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+                  <option value="'Lucida Console', monospace">Lucida Console</option>
+                  <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                  <option value="Verdana, sans-serif">Verdana</option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="testimonialName" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="testimonialName" value="Illeana loayza">
+              </div>
+
+              <div class="col-md-12 mb-3">
+                <label for="testimonialText" class="form-label">Texto del testimonio:</label>
+                <textarea class="form-control" id="testimonialText" rows="4">Los productos de Illi's Cakes son 100 % confiables, personalizables y elaborados con los más altos estándares de calidad. Cada detalle está cuidadosamente pensado para ofrecerte sabores únicos, frescura garantizada y presentaciones encantadoras. Nos apasiona crear experiencias dulces que reflejen tu estilo y superen tus expectativas. En cada torta, cake o bocadito, encontrarás dedicación, creatividad y amor por lo que hacemos. ¡En Illi's Cakes, la calidad y el sabor se disfrutan en cada bocado.</textarea>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- botones -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            <i class="bi bi-x-circle"></i> Cerrar
+          </button>
+          <button type="button" class="btn btn-success" id="saveBtn">
+            <i class="bi bi-check-circle"></i> Guardar cambios
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const verComoBtn = document.getElementById('verComoBtn');
+      const saveBtn = document.getElementById('saveBtn');
+      const editSection = document.getElementById('editSection');
+      const previewSection = document.getElementById('previewSection');
+      const modalTitle = document.getElementById('editorModalLabel');
+
+      let isPreviewMode = false;
+
+      // Variables para almacenar las imágenes
+      const imageData = {
+        bgImage1: null,
+        topImage1: null,
+        bgImage2: null,
+        topImage2: null,
+        bgImage3: null,
+        topImage3: null
+      };
+
+      // Función para manejar la carga de imágenes
+      function setupImageUpload(inputId, nameId, dataKey) {
+        const input = document.getElementById(inputId);
+        const nameDisplay = document.getElementById(nameId);
+
+        input.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+              imageData[dataKey] = event.target.result;
+              nameDisplay.innerHTML = `<i class="bi bi-check-circle-fill text-success"></i> ${file.name}`;
+              nameDisplay.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
+
+      // Configurar todos los uploads de imágenes
+      setupImageUpload('bgImage1', 'bgImage1Name', 'bgImage1');
+      setupImageUpload('topImage1', 'topImage1Name', 'topImage1');
+      setupImageUpload('bgImage2', 'bgImage2Name', 'bgImage2');
+      setupImageUpload('topImage2', 'topImage2Name', 'topImage2');
+      setupImageUpload('bgImage3', 'bgImage3Name', 'bgImage3');
+      setupImageUpload('topImage3', 'topImage3Name', 'topImage3');
+
+      // Actualizar valores de opacidad en tiempo real
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById(`overlayOpacity${i}`).addEventListener('input', function(e) {
+          document.getElementById(`opacity${i}Value`).textContent = e.target.value;
+        });
+      }
+
+      // Función para actualizar la vista previa
+      function updatePreview() {
+        // Actualizar encabezado
+        const headerPreview = document.getElementById('headerPreview');
+        headerPreview.style.backgroundColor = document.getElementById('bgColorInput').value;
+        document.getElementById('previewPhone').textContent = document.getElementById('phoneInput').value;
+        document.getElementById('previewWhatsapp').textContent = document.getElementById('whatsappInput').value;
+        document.getElementById('previewEmail').textContent = document.getElementById('emailInput').value;
+
+        // Actualizar menú
+        const menuPreview = document.getElementById('menuPreview');
+        menuPreview.style.backgroundColor = document.getElementById('menuColorInput').value;
+        document.getElementById('previewMenuTitle').textContent = document.getElementById('menuTitleInput').value;
+        document.getElementById('previewFacebookLink').href = document.getElementById('facebookInput').value;
+        document.getElementById('previewInstagramLink').href = document.getElementById('instagramInput').value;
+
+        // Actualizar todos los slides del carrusel
+        updateCarouselPreview(1);
+        updateCarouselPreview(2);
+        updateCarouselPreview(3);
+      }
+
+      // Función para actualizar la vista previa del carrusel
+      function updateCarouselPreview(slideNum) {
+        const slidePreviewContent = document.getElementById(`slidePreview${slideNum}`);
+        const overlayColor = document.getElementById(`overlayColor${slideNum}`).value;
+        const overlayOpacity = document.getElementById(`overlayOpacity${slideNum}`).value / 100;
+        const title = document.getElementById(`title${slideNum}`).value;
+        const text = document.getElementById(`text${slideNum}`).value;
+        const fontFamily = document.getElementById(`fontFamily${slideNum}`).value;
+        const bgImage = imageData[`bgImage${slideNum}`] || 'https://via.placeholder.com/1200x400/4d0a0a/ffffff?text=Imagen+de+Fondo+' + slideNum;
+        const topImage = imageData[`topImage${slideNum}`] || 'https://via.placeholder.com/400x300/f87ac8/ffffff?text=Imagen+' + slideNum;
+
+        // Convertir hex a rgba
+        const r = parseInt(overlayColor.substr(1, 2), 16);
+        const g = parseInt(overlayColor.substr(3, 2), 16);
+        const b = parseInt(overlayColor.substr(5, 2), 16);
+
+        slidePreviewContent.innerHTML = `
+          <div style="position: relative; width: 100%; height: 100%;">
+            <img src="${bgImage}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <div style="background-color: rgba(${r}, ${g}, ${b}, ${overlayOpacity}); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+            <div style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 20px; height: 100%;">
+              <div style="color: white; font-family: ${fontFamily}; max-width: 60%;">
+                <h2 style="font-size: 24px; margin-bottom: 10px; font-weight: bold;">${title}</h2>
+                <p style="font-size: 14px;">${text}</p>
+              </div>
+              <div style="max-width: 35%;">
+                <img src="${topImage}" style="max-height: 200px; max-width: 100%; border-radius: 8px; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Botón "Ver como"
+      verComoBtn.addEventListener('click', function() {
+        if (!isPreviewMode) {
+          updatePreview();
+          editSection.style.display = 'none';
+          previewSection.style.display = 'block';
+          modalTitle.innerHTML = '<i class="bi bi-eye-fill"></i> Vista previa';
+          verComoBtn.innerHTML = '<i class="bi bi-pencil"></i> Volver a editar';
+          isPreviewMode = true;
+        } else {
+          previewSection.style.display = 'none';
+          editSection.style.display = 'block';
+          modalTitle.innerHTML = '<i class="bi bi-gear-fill"></i> Modo Editor';
+          verComoBtn.innerHTML = '<i class="bi bi-eye"></i> Ver como';
+          isPreviewMode = false;
+        }
+      });
+
+      // Botón "Guardar cambios"
+      saveBtn.addEventListener('click', function() {
+        // Aquí puedes agregar lógica para guardar los cambios en tu página principal
+        const changes = {
+          header: {
+            bgColor: document.getElementById('bgColorInput').value,
+            phone: document.getElementById('phoneInput').value,
+            whatsapp: document.getElementById('whatsappInput').value,
+            email: document.getElementById('emailInput').value
+          },
+          menu: {
+            title: document.getElementById('menuTitleInput').value,
+            color: document.getElementById('menuColorInput').value,
+            facebook: document.getElementById('facebookInput').value,
+            instagram: document.getElementById('instagramInput').value
+          },
+          carousel: {
+            slides: []
+          }
+        };
+
+        // Recopilar datos de cada slide
+        for (let i = 1; i <= 3; i++) {
+          changes.carousel.slides.push({
+            bgImage: imageData[`bgImage${i}`],
+            topImage: imageData[`topImage${i}`],
+            overlayColor: document.getElementById(`overlayColor${i}`).value,
+            overlayOpacity: document.getElementById(`overlayOpacity${i}`).value,
+            fontFamily: document.getElementById(`fontFamily${i}`).value,
+            title: document.getElementById(`title${i}`).value,
+            text: document.getElementById(`text${i}`).value
+          });
+        }
+
+        console.log('Cambios guardados:', changes);
+        
+        // Mostrar mensaje de éxito
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+        alertDiv.style.zIndex = '9999';
+        alertDiv.innerHTML = `
+          <i class="bi bi-check-circle-fill"></i> ¡Cambios guardados con éxito!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        document.body.appendChild(alertDiv);
+
+        setTimeout(() => {
+          alertDiv.remove();
+        }, 3000);
+      });
+    });
+  </script>          <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+            {% block contenido %}
+        {% endblock %}
+    </div>
+    <script src="{% static 'application/js/bootstrap.bundle.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'application/js/scripts.js' %}"></script>
+    <script src="{% static 'application/js/chart.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'application/js/chart-area-demo.js' %}"></script>
+    <script src="{% static 'application/js/chart-bar-demo.js' %}"></script>
+    <script src="{% static 'application/js/simple-datatables.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'application/js/datatables-simple-demo.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
+</html>
