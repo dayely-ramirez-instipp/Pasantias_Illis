@@ -74,7 +74,7 @@ def add_user(request):
             fail_silently=False,
         )
 
-        return render(request, 'application/list-users.html', {
+        return render(request, 'aplicacion/list-users.html', {
             'perfiles': Profile.objects.all(),
             'mensaje': 'Usuario creado correctamente.'
         })
@@ -98,7 +98,7 @@ def edit_user(request, profile_id):
         profile.user.save()
         profile.save()
         return redirect('list-users')
-    return render(request, 'application/edit-user.html', {'profile': profile})
+    return render(request, 'aplicacion/edit-user.html', {'profile': profile})
 
 
 @login_required
@@ -107,7 +107,7 @@ def delete_user(request, profile_id):
     if request.method == 'POST':
         user = User.objects.get(id=profile.user.id)
         user.delete()
-        return render(request, 'application/list-users.html', {
+        return render(request, 'aplicacion/list-users.html', {
             'perfiles': Profile.objects.all()
         })
-    return render(request, 'application/delete-user.html', {'profile': profile})
+    return render(request, 'aplicacion/delete-user.html', {'profile': profile})

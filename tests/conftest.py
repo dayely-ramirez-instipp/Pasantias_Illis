@@ -25,8 +25,10 @@ def user_data():
 
 
 @pytest.fixture
-@pytest.mark.django_db
 def user(django_user_model, user_data, db):
+    """
+    Crea un usuario de prueba. El fixture 'db' habilita acceso a la BD.
+    """
     return django_user_model.objects.create_user(
         username=user_data["username"],
         email=user_data["email"],
@@ -38,8 +40,10 @@ def user(django_user_model, user_data, db):
 
 
 @pytest.fixture
-@pytest.mark.django_db
-def client_logged(user, client):
+def client_logged(user, client, db):
+    """
+    Cliente autenticado. El fixture 'db' habilita acceso a la BD.
+    """
     client = Client()
     assert client.login(username=user.username, password="Ds123456789!")
     return client

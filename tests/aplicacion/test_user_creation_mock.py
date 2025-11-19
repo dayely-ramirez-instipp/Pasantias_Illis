@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import patch
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 @pytest.mark.django_db
@@ -23,9 +24,9 @@ def test_add_user_calls_create_user_with_expected_fields(client_logged):
         "txtFechaCumpleanos": "1990-01-01",
     }
 
-    with patch("application.views.generar_contraseña", return_value="Clave$1234") as mock_gen, \
-            patch("application.views.User.objects.create_user") as mock_create_user, \
-            patch("application.views.Profile.objects.create") as mock_profile_create:
+    with patch("aplicacion.views.generar_contraseña", return_value="Clave$1234") as mock_gen, \
+            patch("aplicacion.views.User.objects.create_user") as mock_create_user, \
+            patch("aplicacion.views.Profile.objects.create") as mock_profile_create:
         # Simular que la creación retorna un "user" con id, por ejemplo
         fake_user = type("U", (), {"id": 1})
         mock_create_user.return_value = fake_user
