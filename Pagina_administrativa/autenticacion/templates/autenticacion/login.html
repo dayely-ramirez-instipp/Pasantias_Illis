@@ -14,61 +14,77 @@
     <script src="{% static 'autenticacion/js/all.js' %}" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg" style="font-family: 'Arial', sans-serif;
-            background-color: #ffd1dc;">
-    <div id="layoutAuthentication" style=" border-color: #7c000a; outline: none;">
-        <div id="layoutAuthentication_content">
-            <main>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5">
-                            <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header">
-                                    <h3 class="text-center font-weight-light my-4">INICIO DE SESION</h3>
+<body class="bg" style="font-family: 'Arial', sans-serif; background-color: #ffd1dc; margin: 0; padding: 0; min-height: 100vh; display: flex; flex-direction: column;">
+    <div id="layoutAuthentication" style="border-color: #7c000a; outline: none; flex: 1; display: flex; flex-direction: column;">
+        <div id="layoutAuthentication_content" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <main style="width: 100%; max-width: 1200px;">
+                <div class="container" style="width: 100%;">
+                    <div class="row justify-content-center" style="display: flex; justify-content: center;">
+                        <div class="col-lg-5" style="width: 100%; max-width: 500px;">
+                            <!-- Logo -->
+                            <div style="text-align: center; margin-bottom: 30px;">
+                                <img src="{% static 'autenticacion/images/logo.png' %}" alt="Illi's Cakes" style="max-width: 250px; width: 100%; height: auto;">
+                            </div>
+                            <div class="card shadow-lg border-0 rounded-lg mt-5" style="background-color: #fff8e7; border: none; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 30px;">
+                                <div class="card-header" style="background: transparent; border: none; text-align: center; margin-bottom: 20px;">
+                                    <h3 class="text-center font-weight-light my-1" style="color: #333; font-size: 20px; font-weight: 400; margin: 0;">INICIO SESION </h3>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body" style="padding: 0;">
                                     <form method="POST" action="{% url 'login' %}">
                                         {% csrf_token %}
                                         {% if error is not None %}
-                                        <div class="form-floating mb-3">
-                                            <div class="alert alert-danger" role="alert">
+                                        <div class="form-floating mb-3" style="margin-bottom: 20px;">
+                                            <div class="alert alert-danger" role="alert" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 10px; border-radius: 5px;">
                                                 {{ error }}    
                                             </div>
                                         </div>
                                         {% endif %}
                                         {% if message is not None %}
-                                        <div class="form-floating mb-3">
-                                            <div class="alert alert-danger" role="alert">
+                                        <div class="form-floating mb-3" style="margin-bottom: 20px;">
+                                            <div class="alert alert-danger" role="alert" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 10px; border-radius: 5px;">
                                                 {{ message }}    
                                             </div>
                                         </div>
                                         {% endif %}
-                                        <div class="form-floating mb-3">
+                                        
+                                        <div style="margin-bottom: 20px;">
+                                            <label for="inputUsername" style="display: block; color: #333; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Usuario</label>
                                             <input class="form-control" id="inputUsername" type="text"
-                                                placeholder="your username" name="inputUsername" />
-                                            <label for="inputUsername">Username/Correo electrónico/Cédula</label>
+                                                placeholder="Ingresa tu nombre de usuario" name="inputUsername" 
+                                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box;" />
                                         </div>
-                                        <div class="form-floating mb-3">
+                                        
+                                        <div style="margin-bottom: 20px;">
+                                            <label for="inputPassword" style="display: block; color: #333; font-weight: 600; margin-bottom: 8px; font-size: 14px;">Contraseña</label>
                                             <input class="form-control" id="inputPassword" type="password"
-                                                placeholder="Password" name="inputPassword" />
-                                            <label for="inputPassword">Password</label>
+                                                placeholder="Ingresa tu contraseña" name="inputPassword" 
+                                                style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; box-sizing: border-box;" />
                                         </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox"
-                                                value="" />
-                                            <label class="form-check-label" for="inputRememberPassword">Remember
-                                                Password</label>
+                                        
+                                        <div class="form-check mb-3" style="margin-bottom: 20px; display: none;">
+                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
+                                            <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                         </div>
-                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="{% url 'password_reset' %}">Olvidaste tu contraseña?</a>
-                                            <!-- <a class="btn btn-primary" href="index.html">Login</a> -->
-                                            <input type="submit" value="INICIAR" class="btn btn-primary" />
+                                        
+                                        <div style="margin-bottom: 25px;">
+                                            <input type="submit" value="Iniciar Sesión" class="btn btn-primary" 
+                                                style="width: 100%; padding: 14px; background-color: #c91c5a; border: none; border-radius: 8px; color: white; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s;" 
+                                                onmouseover="this.style.backgroundColor='#a01648'" 
+                                                onmouseout="this.style.backgroundColor='#c91c5a'" />
+                                        </div>
+                                        <div style="margin-bottom: 20px;">
+                                            <a href="{% url 'register' %}" class="btn" 
+                                                style="display: block; width: 100%; padding: 14px; background-color: transparent; border: 2px solid #c91c5a; border-radius: 8px; color: #c91c5a; font-size: 16px; font-weight: 600; text-align: center; text-decoration: none; box-sizing: border-box; transition: all 0.3s;"
+                                                onmouseover="this.style.backgroundColor='#c91c5a'; this.style.color='white'" 
+                                                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#c91c5a'">
+                                                Registrarse
+                                            </a>
+                                        </div>
+                                        
+                                        <div style="text-align: center; margin-top: 20px;">
+                                            <a class="small" href="{% url 'password_reset' %}" style="color: #333; font-size: 14px; text-decoration: none;">Olvidé mi contraseña</a>
                                         </div>
                                     </form>
-                                </div>
-                                <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="{% url 'register' %}">Need an account? Sign up!</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -77,14 +93,14 @@
             </main>
         </div>
         <div id="layoutAuthentication_footer">
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Illi´s Cakes 2025</div>
+            <footer class="py-4 bg-light mt-auto" style="background-color: #ddd; padding: 20px 0; margin-top: auto;">
+                <div class="container-fluid px-4" style="padding: 0 20px;">
+                    <div class="d-flex align-items-center justify-content-between small" style="display: flex; align-items: center; justify-content: space-between; font-size: 12px;">
+                        <div class="text-muted" style="color: #666;">Copyright &copy; Illi´s Cakes 2025</div>
                         <div>
-                            <a href="#">Privacy Policy</a>
+                            <a href="#" style="color: #666; text-decoration: none; margin: 0 5px;">Privacy Policy</a>
                             &middot;
-                            <a href="#">Terms &amp; Conditions</a>
+                            <a href="#" style="color: #666; text-decoration: none; margin: 0 5px;">Terms &amp; Conditions</a>
                         </div>
                     </div>
                 </div>
