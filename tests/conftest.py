@@ -18,14 +18,15 @@ def user_data():
     return {
         "username": "test1",
         "email": "dayesimis97@gmail.com",
-        "password": "Dr12356!",
+        "password": "Ds123456789!",
         "first_name": "First name test",
         "last_name": "Las name test",
     }
 
 
 @pytest.fixture
-def user(django_user_model, user_data):
+@pytest.mark.django_db
+def user(django_user_model, user_data, db):
     return django_user_model.objects.create_user(
         username=user_data["username"],
         email=user_data["email"],
@@ -37,7 +38,8 @@ def user(django_user_model, user_data):
 
 
 @pytest.fixture
-def client_logged(user):
+@pytest.mark.django_db
+def client_logged(user, client):
     client = Client()
-    assert client.login(username=user.username, password="Dr12356!")
+    assert client.login(username=user.username, password="Ds123456789!")
     return client

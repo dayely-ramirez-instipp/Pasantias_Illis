@@ -10,13 +10,13 @@ from django.core.mail import send_mail
 
 @login_required
 def home(request):
-    return render(request, 'application/home.html')
+    return render(request, 'aplicacion/base.html')
 
 
 @login_required
 def list_users(request):
     perfiles = Profile.objects.all()
-    return render(request, 'application/list-users.html', {
+    return render(request, 'aplicacion/list-users.html', {
         'perfiles': perfiles
     })
 
@@ -41,15 +41,15 @@ def add_user(request):
         # Validaciones que no exista el user ni el profile
         if User.objects.filter(username=username_).exists():
             error_message = "El nombre de usuario ya existe."
-            return render(request, 'application/add-user.html', {'error': error_message})
+            return render(request, 'aplicacion/register.html', {'error': error_message})
 
         if User.objects.filter(email=email_).exists():
             error_message = "El email del usuario ya existe"
-            return render(request, 'application/add-user.html', {'error': error_message})
+            return render(request, 'aplicacion/register.html', {'error': error_message})
 
         if Profile.objects.filter(cedula=cedula_).exists():
             error_message = "La cédula del usuario ya existe"
-            return render(request, 'application/add-user.html', {'error': error_message})
+            return render(request, 'aplicacion/register.html', {'error': error_message})
 
         print("Contraseña generada: ", password_)
 
@@ -78,7 +78,7 @@ def add_user(request):
             'perfiles': Profile.objects.all(),
             'mensaje': 'Usuario creado correctamente.'
         })
-    return render(request, 'application/add-user.html')
+    return render(request, 'aplicacion/register.html')
 
 
 @login_required

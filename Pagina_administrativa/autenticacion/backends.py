@@ -27,14 +27,14 @@ class MultiFieldAuthBackend(ModelBackend):
         except (User.DoesNotExist, User.MultipleObjectsReturned):
             pass
         
-        # # Busca por cédula en el perfil
-        # try:
-        #     profile = Profile.objects.get(cedula__iexact=username)
-        #     user = profile.user
-        #     if user.check_password(password):
-        #         return user
-        # except Profile.DoesNotExist:
-        #     return None
+        # Busca por cédula en el perfil
+        try:
+            profile = Profile.objects.get(cedula__iexact=username)
+            user = profile.user
+            if user.check_password(password):
+                return user
+        except Profile.DoesNotExist:
+            return None
         
         return None
 
