@@ -38,6 +38,7 @@ def test_add_user_calls_create_user_with_expected_fields(client_logged):
         mock_gen.assert_called_once()
 
         # 1) create_user fue llamado con los kwargs esperados
+        
         mock_create_user.assert_called_once()
         args, kwargs = mock_create_user.call_args
         assert kwargs["username"] == post_data["txtUsername"]
