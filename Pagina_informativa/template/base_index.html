@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav mx-auto mb-2 mb-lg-0" style="--hover-color: rgb(77, 10, 10);">
   <li class="nav-item">
-    <a class="nav-link" href="#scroll-target" 
+    <a class="nav-link" href="index.html#scroll-target" 
        style="transition: color 0.3s;"
        onmouseover="this.style.color='rgb(77, 10, 10)'" 
        onmouseout="this.style.color=''" >
@@ -42,7 +43,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="#productos"
+    <a class="nav-link" href="index.html#productos"
        style="transition: color 0.3s;"
        onmouseover="this.style.color='rgb(77, 10, 10)'" 
        onmouseout="this.style.color=''" >
@@ -51,7 +52,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="#nosotros"
+    <a class="nav-link" href="index.html#nosotros"
        style="transition: color 0.3s;"
        onmouseover="this.style.color='rgb(77, 10, 10)'" 
        onmouseout="this.style.color=''" >
@@ -65,7 +66,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="https://www.instagram.com/illiscakes6?igsh=MTZwZjJqNXVrb29uMA=="
+    <a class="nav-link" href="{% url 'galeria' %}"
        style="transition: color 0.3s;"
        onmouseover="this.style.color='rgb(77, 10, 10)'" 
        onmouseout="this.style.color=''" >
@@ -74,7 +75,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="#UBICACION"
+    <a class="nav-link" href="index.html#UBICACION"
        style="transition: color 0.3s;"
        onmouseover="this.style.color='rgb(77, 10, 10)'" 
        onmouseout="this.style.color=''" >
@@ -104,10 +105,60 @@
     <!-- Borde inferior en zigzag -->
     <div style="height: 20px; background: linear-gradient(135deg, #f87ac8 25%, transparent 25%), linear-gradient(225deg, #f87ac8 25%, transparent 25%); background-size: 20px 20px; background-position: 0 0, 10px 0; margin-top: -20px; position: relative; z-index: 5;"></div>
 
+ {% block contenido %}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {% endblock %}
+
+    <!-- UBICACION-->
+                   <aside class="rounded-3 p-4 p-sm-5 mt-5 text-white" style="background-color:  #ff43c77a" id="UBICACION">
+  <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+    <div class="mb-4 mb-xl-0">
+      <div class="fs-3 fw-bold">Nuevos productos, entregados para ti.</div>
+      <div class="text-white-50">Encuentranos en...</div>
+    </div>
+    <div class="ms-xl-4">
+        <i class="bi bi-geo-alt-fill">Cdla. Las Brisas MzA12 V2, Machala,</i>
+  </div>
+</aside>
+        <!-- Footer-->
+        <footer class=" py-4 mt-auto" style="background-color:  rgb(77, 37, 10);;">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Progming; Your Website 2025</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+</body>
+
+</html>
 
 
 
