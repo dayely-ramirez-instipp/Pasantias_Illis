@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'Pagina_administrativa.autenticacion',
     'aplicacion',
     'Pagina_informativa',
-
-
 ]
 
 MIDDLEWARE = [
