@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Pagina_administrativa.autenticacion',
     'aplicacion',
     'Pagina_informativa',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -156,3 +157,10 @@ EMAIL_USE_SSL = False   # Desactivar SSL (Ya lo tenías bien)
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}

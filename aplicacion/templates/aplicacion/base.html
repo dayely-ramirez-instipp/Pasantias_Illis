@@ -1280,7 +1280,398 @@ Nuestros cakes son una experiencia dulce hecha a tu medida. Con diseños creativ
 </style>
 
 <script>
-let contadorProductos = 4; // Comenzamos desde 5 porque ya hay 4 productos
+// ==================== ENCABEZADO ====================
+document.getElementById('phoneInput')?.addEventListener('input', function(e) {
+    document.querySelector('.bi-telephone-fill').nextSibling.textContent = ' ' + e.target.value;
+});
+
+document.getElementById('whatsappInput')?.addEventListener('input', function(e) {
+    document.querySelector('.bi-whatsapp').nextSibling.textContent = ' ' + e.target.value;
+});
+
+document.getElementById('emailInput')?.addEventListener('input', function(e) {
+    document.querySelector('.bi-envelope-fill').nextSibling.textContent = ' ' + e.target.value;
+});
+
+document.getElementById('headerBgColor')?.addEventListener('input', function(e) {
+    document.querySelector('div[style*="background-color: rgb(77, 37, 10)"]').style.backgroundColor = e.target.value;
+});
+
+// ==================== MENÚ ====================
+document.getElementById('brandNameInput')?.addEventListener('input', function(e) {
+    document.getElementById('menuTitle').textContent = e.target.value;
+});
+
+document.getElementById('facebookLinkInput')?.addEventListener('input', function(e) {
+    document.getElementById('facebookLink').href = e.target.value;
+});
+
+document.getElementById('instagramLinkInput')?.addEventListener('input', function(e) {
+    document.getElementById('instagramLink').href = e.target.value;
+});
+
+document.getElementById('menuBgColor')?.addEventListener('input', function(e) {
+    const color = e.target.value;
+    
+    // Cambiar color del menú principal
+    const menuNav = document.getElementById('menuNav');
+    if (menuNav) menuNav.style.backgroundColor = color;
+    
+    // Cambiar color del div con el SVG (borde ondulado)
+    const menuNavParent = document.getElementById('menuNav');
+    if (menuNavParent) {
+        const svgContainer = menuNavParent.querySelector('div[style*="position: absolute"]');
+        if (svgContainer) {
+            svgContainer.style.background = color;
+            const svg = svgContainer.querySelector('svg');
+            if (svg) {
+                const path = svg.querySelector('path');
+                if (path) path.setAttribute('fill', color);
+            }
+        }
+    }
+    
+    // Cambiar color del borde zigzag (buscar el div siguiente al nav)
+    const allDivs = document.querySelectorAll('div');
+    allDivs.forEach(div => {
+        const style = div.getAttribute('style');
+        if (style && style.includes('linear-gradient(135deg') && style.includes('#f87ac8')) {
+            div.style.background = `linear-gradient(135deg, ${color} 25%, transparent 25%), linear-gradient(225deg, ${color} 25%, transparent 25%)`;
+            div.style.backgroundSize = '20px 20px';
+            div.style.backgroundPosition = '0 0, 10px 0';
+        }
+    });
+    
+    console.log('Color del menú cambiado a:', color);
+});
+
+// ==================== CARRUSEL ====================
+for (let i = 1; i <= 3; i++) {
+    // Título
+    document.getElementById(`title${i}`)?.addEventListener('input', function(e) {
+        const slide = document.querySelectorAll('.carousel-item')[i-1];
+        slide.querySelector('.display-5').textContent = e.target.value;
+    });
+
+    // Tipo de letra
+    document.getElementById(`font${i}`)?.addEventListener('change', function(e) {
+        const slide = document.querySelectorAll('.carousel-item')[i-1];
+        slide.querySelector('.display-5').style.fontFamily = e.target.value;
+    });
+
+    // Texto descriptivo
+    document.getElementById(`text${i}`)?.addEventListener('input', function(e) {
+        const slide = document.querySelectorAll('.carousel-item')[i-1];
+        slide.querySelector('.lead').textContent = e.target.value;
+    });
+
+    // Color de capa
+    document.getElementById(`overlay${i}`)?.addEventListener('input', function(e) {
+        const slide = document.querySelectorAll('.carousel-item')[i-1];
+        const overlay = slide.querySelector('div[style*="rgba"]');
+        if (overlay) {
+            const opacity = document.getElementById(`opacity${i}`).value / 100;
+            const rgb = hexToRgb(e.target.value);
+            overlay.style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
+        }
+    });
+
+    // Opacidad
+    document.getElementById(`opacity${i}`)?.addEventListener('input', function(e) {
+        document.getElementById(`opacityValue${i}`).textContent = e.target.value + '%';
+        const slide = document.querySelectorAll('.carousel-item')[i-1];
+        const overlay = slide.querySelector('div[style*="rgba"]');
+        if (overlay) {
+            const color = document.getElementById(`overlay${i}`).value;
+            const rgb = hexToRgb(color);
+            overlay.style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${e.target.value / 100})`;
+        }
+    });
+
+    // Imagen de fondo
+    document.getElementById(`bgImage${i}`)?.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const slide = document.querySelectorAll('.carousel-item')[i-1];
+                const img = slide.querySelector('header > img');
+                if (img) img.src = event.target.result;
+                document.getElementById(`bgPreview${i}`).src = event.target.result;
+                document.getElementById(`bgPreview${i}`).classList.remove('d-none');
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    });
+
+    // Imagen lateral
+    document.getElementById(`sideImage${i}`)?.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const slide = document.querySelectorAll('.carousel-item')[i-1];
+                const img = slide.querySelector('.col-xl-5 img');
+                if (img) img.src = event.target.result;
+                document.getElementById(`sidePreview${i}`).src = event.target.result;
+                document.getElementById(`sidePreview${i}`).classList.remove('d-none');
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    });
+}
+
+// ==================== LÍNEA DE TEXTO ====================
+document.getElementById('textLineContent')?.addEventListener('input', function(e) {
+    const h4 = document.querySelector('h4[style*="background-color: rgb(77, 10, 10)"]');
+    if (h4) h4.textContent = e.target.value;
+});
+
+document.getElementById('textLineBgColor')?.addEventListener('input', function(e) {
+    const h4 = document.querySelector('h4[style*="background-color: rgb(77, 10, 10)"]');
+    if (h4) h4.style.backgroundColor = e.target.value;
+});
+
+document.getElementById('textLineColor')?.addEventListener('input', function(e) {
+    const h4 = document.querySelector('h4[style*="background-color: rgb(77, 10, 10)"]');
+    if (h4) h4.style.color = e.target.value;
+});
+
+document.getElementById('textLineFontFamily')?.addEventListener('change', function(e) {
+    const h4 = document.querySelector('h4[style*="background-color: rgb(77, 10, 10)"]');
+    if (h4) h4.style.fontFamily = e.target.value;
+});
+
+// ==================== BIENVENIDA ====================
+document.getElementById('welcomeImage')?.addEventListener('change', function(e) {
+    if (e.target.files && e.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const section = document.getElementById('scroll-target');
+            const img = section.querySelector('img');
+            if (img) img.src = event.target.result;
+            document.getElementById('welcomeImageName').textContent = e.target.files[0].name;
+            document.getElementById('welcomeImageName').style.display = 'block';
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    }
+});
+
+document.getElementById('welcomeBgColor')?.addEventListener('input', function(e) {
+    const section = document.getElementById('scroll-target');
+    if (section) section.style.backgroundColor = e.target.value;
+});
+
+document.getElementById('welcomeTextColor')?.addEventListener('input', function(e) {
+    const section = document.getElementById('scroll-target');
+    if (section) {
+        section.querySelector('h2').style.color = e.target.value;
+        section.querySelector('p').style.color = e.target.value;
+    }
+});
+
+document.getElementById('welcomeFontFamily')?.addEventListener('change', function(e) {
+    const section = document.getElementById('scroll-target');
+    if (section) {
+        section.querySelector('h2').style.fontFamily = e.target.value;
+    }
+});
+
+document.getElementById('welcomeTitle')?.addEventListener('input', function(e) {
+    const section = document.getElementById('scroll-target');
+    if (section) section.querySelector('h2').textContent = e.target.value;
+});
+
+document.getElementById('welcomeText')?.addEventListener('input', function(e) {
+    const section = document.getElementById('scroll-target');
+    if (section) section.querySelector('p').textContent = e.target.value;
+});
+
+// ==================== ICONOS ====================
+for (let i = 1; i <= 4; i++) {
+    document.getElementById(`icon${i}Image`)?.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const iconDiv = document.querySelector(`.imagen${i} img`);
+                if (iconDiv) iconDiv.src = event.target.result;
+                document.getElementById(`icon${i}ImageName`).textContent = e.target.files[0].name;
+                document.getElementById(`icon${i}ImageName`).style.display = 'block';
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    });
+
+    document.getElementById(`icon${i}Text`)?.addEventListener('input', function(e) {
+        const iconSection = document.querySelector(`.imagen${i}`).parentElement;
+        const h2 = iconSection.querySelector('h2');
+        if (h2) h2.innerHTML = e.target.value.replace(/\n/g, '<br>');
+    });
+}
+
+// ==================== PRODUCTOS ====================
+for (let i = 1; i <= 4; i++) {
+    const sections = document.querySelectorAll('section[style*="width: 100%"]');
+    const productSection = sections[i + 1]; // +1 porque las primeras secciones no son productos
+
+    // Imágenes
+    for (let j = 1; j <= 3; j++) {
+        document.getElementById(`product${i}Image${j}`)?.addEventListener('change', function(e) {
+            if (e.target.files && e.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgs = productSection.querySelectorAll('img');
+                    if (imgs[j-1]) imgs[j-1].src = event.target.result;
+                    document.getElementById(`product${i}Image${j}Name`).textContent = e.target.files[0].name;
+                    document.getElementById(`product${i}Image${j}Name`).style.display = 'block';
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            }
+        });
+    }
+
+    // Color de fondo
+    document.getElementById(`product${i}BgColor`)?.addEventListener('input', function(e) {
+        if (productSection) productSection.style.backgroundColor = e.target.value;
+    });
+
+    // Tipo de letra
+    document.getElementById(`product${i}FontFamily`)?.addEventListener('change', function(e) {
+        const h3 = productSection.querySelector('h3');
+        if (h3) h3.style.fontFamily = e.target.value;
+    });
+
+    // Título
+    document.getElementById(`product${i}Title`)?.addEventListener('input', function(e) {
+        const h3 = productSection.querySelector('h3');
+        if (h3) h3.textContent = e.target.value;
+    });
+
+    // Descripción
+    document.getElementById(`product${i}Text`)?.addEventListener('input', function(e) {
+        const p = productSection.querySelector('p');
+        if (p) p.textContent = e.target.value;
+    });
+}
+
+// ==================== SOBRE NOSOTROS ====================
+document.getElementById('historyBgImage')?.addEventListener('change', function(e) {
+    if (e.target.files && e.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const card = document.getElementById('nosotros');
+            const img = card.querySelector('.card-img');
+            if (img) img.src = event.target.result;
+            document.getElementById('historyBgImageName').textContent = e.target.files[0].name;
+            document.getElementById('historyBgImageName').style.display = 'block';
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    }
+});
+
+document.getElementById('historyOverlayColor')?.addEventListener('input', function(e) {
+    updateHistoryOverlay();
+});
+
+document.getElementById('historyOverlayOpacity')?.addEventListener('input', function(e) {
+    updateHistoryOverlay();
+});
+
+function updateHistoryOverlay() {
+    const color = document.getElementById('historyOverlayColor').value;
+    const opacity = document.getElementById('historyOverlayOpacity').value / 100;
+    const overlay = document.querySelector('#nosotros .card-img-overlay');
+    const rgb = hexToRgb(color);
+    if (overlay) overlay.style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
+}
+
+document.getElementById('historyMainTitle')?.addEventListener('input', function(e) {
+    const title = document.querySelector('#nosotros .card-title');
+    if (title) title.textContent = e.target.value;
+});
+
+// Tarjetas de historia
+for (let i = 1; i <= 3; i++) {
+    document.getElementById(`historyCard${i}Icon`)?.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const cards = document.querySelectorAll('#nosotros .card');
+                const img = cards[i].querySelector('.card-header img');
+                if (img) img.src = event.target.result;
+                document.getElementById(`historyCard${i}IconName`).textContent = e.target.files[0].name;
+                document.getElementById(`historyCard${i}IconName`).style.display = 'block';
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    });
+
+    document.getElementById(`historyCard${i}BgColor`)?.addEventListener('input', function(e) {
+        const cards = document.querySelectorAll('#nosotros .card.card-custom');
+        const opacity = document.getElementById(`historyCard${i}Opacity`).value / 100;
+        const rgb = hexToRgb(e.target.value);
+        if (cards[i-1]) cards[i-1].style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
+    });
+
+    document.getElementById(`historyCard${i}Opacity`)?.addEventListener('input', function(e) {
+        const color = document.getElementById(`historyCard${i}BgColor`).value;
+        const cards = document.querySelectorAll('#nosotros .card.card-custom');
+        const rgb = hexToRgb(color);
+        if (cards[i-1]) cards[i-1].style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${e.target.value / 100})`;
+    });
+
+    document.getElementById(`historyCard${i}Title`)?.addEventListener('input', function(e) {
+        const cards = document.querySelectorAll('#nosotros .card.card-custom');
+        const title = cards[i-1]?.querySelector('.card-title');
+        if (title) title.textContent = e.target.value;
+    });
+
+    document.getElementById(`historyCard${i}Text`)?.addEventListener('input', function(e) {
+        const cards = document.querySelectorAll('#nosotros .card.card-custom');
+        const text = cards[i-1]?.querySelector('.card-text');
+        if (text) text.textContent = e.target.value;
+    });
+}
+
+// ==================== TESTIMONIOS ====================
+document.getElementById('testimonialImage')?.addEventListener('change', function(e) {
+    if (e.target.files && e.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = document.querySelector('.rounded-circle.me-3');
+            if (img) img.src = event.target.result;
+            document.getElementById('testimonialImageName').textContent = e.target.files[0].name;
+            document.getElementById('testimonialImageName').style.display = 'block';
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    }
+});
+
+document.getElementById('testimonialFontFamily')?.addEventListener('change', function(e) {
+    const testimonial = document.querySelector('.fs-4.mb-4.fst-italic');
+    if (testimonial) testimonial.style.fontFamily = e.target.value;
+});
+
+document.getElementById('testimonialName')?.addEventListener('input', function(e) {
+    const name = document.querySelector('.fw-bold');
+    if (name) name.textContent = e.target.value;
+});
+
+document.getElementById('testimonialText')?.addEventListener('input', function(e) {
+    const text = document.querySelector('.fs-4.mb-4.fst-italic');
+    if (text) text.textContent = e.target.value;
+});
+
+// ==================== FUNCIONES AUXILIARES ====================
+function hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : { r: 0, g: 0, b: 0 };
+}
+
+// ==================== AGREGAR Y ELIMINAR PRODUCTOS ====================
+let contadorProductos = 4;
 
 function agregarNuevoProducto() {
     contadorProductos++;
@@ -1325,9 +1716,6 @@ function agregarNuevoProducto() {
                     <option value="'Courier New', monospace">Courier New</option>
                     <option value="Georgia, serif">Georgia</option>
                     <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
-                    <option value="'Lucida Console', monospace">Lucida Console</option>
-                    <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
-                    <option value="Verdana, sans-serif">Verdana</option>
                 </select>
             </div>
             <div class="col-md-4 mb-3">
@@ -1342,8 +1730,6 @@ function agregarNuevoProducto() {
     `;
     
     container.appendChild(nuevoProducto);
-    
-    // Mostrar mensaje de confirmación
     alert('¡Nuevo producto agregado! Recuerda completar toda la información.');
 }
 
@@ -1356,6 +1742,390 @@ function eliminarProducto(numeroProducto) {
         }
     }
 }
+
+// ==================== GUARDAR CAMBIOS ====================
+document.querySelector('.modal-footer .btn-primary')?.addEventListener('click', function() {
+    // Recopilar todos los datos editados
+    const cambios = {
+        // Encabezado
+        encabezado: {
+            telefono: document.getElementById('phoneInput')?.value,
+            whatsapp: document.getElementById('whatsappInput')?.value,
+            email: document.getElementById('emailInput')?.value,
+            colorFondo: document.getElementById('headerBgColor')?.value
+        },
+        
+        // Menú
+        menu: {
+            nombreMarca: document.getElementById('brandNameInput')?.value,
+            facebook: document.getElementById('facebookLinkInput')?.value,
+            instagram: document.getElementById('instagramLinkInput')?.value,
+            colorMenu: document.getElementById('menuBgColor')?.value
+        },
+        
+        // Carrusel
+        carrusel: [],
+        
+        // Línea de texto
+        lineaTexto: {
+            contenido: document.getElementById('textLineContent')?.value,
+            colorFondo: document.getElementById('textLineBgColor')?.value,
+            colorTexto: document.getElementById('textLineColor')?.value,
+            tipoLetra: document.getElementById('textLineFontFamily')?.value
+        },
+        
+        // Bienvenida
+        bienvenida: {
+            imagen: document.querySelector('#scroll-target img')?.src,
+            colorFondo: document.getElementById('welcomeBgColor')?.value,
+            colorTexto: document.getElementById('welcomeTextColor')?.value,
+            tipoLetra: document.getElementById('welcomeFontFamily')?.value,
+            titulo: document.getElementById('welcomeTitle')?.value,
+            texto: document.getElementById('welcomeText')?.value
+        },
+        
+        // Iconos
+        iconos: [],
+        
+        // Productos
+        productos: [],
+        
+        // Sobre Nosotros
+        sobreNosotros: {
+            imagenFondo: document.querySelector('#nosotros .card-img')?.src,
+            colorCapa: document.getElementById('historyOverlayColor')?.value,
+            opacidadCapa: document.getElementById('historyOverlayOpacity')?.value,
+            tituloCompletoal: document.getElementById('historyMainTitle')?.value,
+            tarjetas: []
+        },
+        
+        // Testimonio
+        testimonio: {
+            imagen: document.querySelector('.rounded-circle.me-3')?.src,
+            tipoLetra: document.getElementById('testimonialFontFamily')?.value,
+            nombre: document.getElementById('testimonialName')?.value,
+            texto: document.getElementById('testimonialText')?.value
+        }
+    };
+    
+    // Recopilar datos del carrusel
+    for (let i = 1; i <= 3; i++) {
+        const slide = document.querySelectorAll('.carousel-item')[i-1];
+        cambios.carrusel.push({
+            titulo: document.getElementById(`title${i}`)?.value,
+            tipoLetra: document.getElementById(`font${i}`)?.value,
+            texto: document.getElementById(`text${i}`)?.value,
+            colorCapa: document.getElementById(`overlay${i}`)?.value,
+            opacidad: document.getElementById(`opacity${i}`)?.value,
+            imagenFondo: slide.querySelector('header > img')?.src,
+            imagenLateral: slide.querySelector('.col-xl-5 img')?.src
+        });
+    }
+    
+    // Recopilar datos de iconos
+    for (let i = 1; i <= 4; i++) {
+        cambios.iconos.push({
+            imagen: document.querySelector(`.imagen${i} img`)?.src,
+            texto: document.getElementById(`icon${i}Text`)?.value
+        });
+    }
+    
+    // Recopilar datos de productos
+    const productosElements = document.querySelectorAll('[data-producto]');
+    productosElements.forEach((elem, index) => {
+        const num = elem.getAttribute('data-producto');
+        const sections = document.querySelectorAll('section[style*="width: 100%"]');
+        const productSection = sections[parseInt(num) + 1];
+        
+        if (productSection) {
+            const imgs = productSection.querySelectorAll('img');
+            cambios.productos.push({
+                numero: num,
+                imagen1: imgs[0]?.src,
+                imagen2: imgs[1]?.src,
+                imagen3: imgs[2]?.src,
+                colorFondo: document.getElementById(`product${num}BgColor`)?.value,
+                tipoLetra: document.getElementById(`product${num}FontFamily`)?.value,
+                titulo: document.getElementById(`product${num}Title`)?.value,
+                texto: document.getElementById(`product${num}Text`)?.value
+            });
+        }
+    });
+    
+    // Recopilar datos de tarjetas de historia
+    for (let i = 1; i <= 3; i++) {
+        const cards = document.querySelectorAll('#nosotros .card.card-custom');
+        cambios.sobreNosotros.tarjetas.push({
+            icono: cards[i-1]?.querySelector('.card-header img')?.src,
+            colorFondo: document.getElementById(`historyCard${i}BgColor`)?.value,
+            opacidad: document.getElementById(`historyCard${i}Opacity`)?.value,
+            titulo: document.getElementById(`historyCard${i}Title`)?.value,
+            texto: document.getElementById(`historyCard${i}Text`)?.value
+        });
+    }
+    
+    // Guardar en localStorage
+    localStorage.setItem('cambiosPagina', JSON.stringify(cambios));
+    
+    // Aplicar cambios inmediatamente
+    aplicarCambiosGuardados(cambios);
+    
+    // Cerrar modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editorModal'));
+    modal.hide();
+    
+    // Mostrar confirmación
+    mostrarNotificacion('✅ Cambios guardados correctamente', 'success');
+});
+
+// ==================== APLICAR CAMBIOS GUARDADOS ====================
+function aplicarCambiosGuardados(cambios) {
+    if (!cambios) return;
+    
+    // Aplicar encabezado
+    if (cambios.encabezado) {
+        const telElement = document.querySelector('.bi-telephone-fill');
+        if (telElement) telElement.nextSibling.textContent = ' ' + cambios.encabezado.telefono;
+        
+        const whatsElement = document.querySelector('.bi-whatsapp');
+        if (whatsElement) whatsElement.nextSibling.textContent = ' ' + cambios.encabezado.whatsapp;
+        
+        const emailElement = document.querySelector('.bi-envelope-fill');
+        if (emailElement) emailElement.nextSibling.textContent = ' ' + cambios.encabezado.email;
+        
+        const headerDiv = document.querySelector('div[style*="background-color"]');
+        if (headerDiv) headerDiv.style.backgroundColor = cambios.encabezado.colorFondo;
+    }
+    
+    // Aplicar menú
+    if (cambios.menu) {
+        const menuTitle = document.getElementById('menuTitle');
+        if (menuTitle) menuTitle.textContent = cambios.menu.nombreMarca;
+        
+        const fbLink = document.getElementById('facebookLink');
+        if (fbLink) fbLink.href = cambios.menu.facebook;
+        
+        const igLink = document.getElementById('instagramLink');
+        if (igLink) igLink.href = cambios.menu.instagram;
+        
+        const menuNav = document.getElementById('menuNav');
+        if (menuNav) menuNav.style.backgroundColor = cambios.menu.colorMenu;
+        
+        // Aplicar color a los bordes ondulados y zigzag
+        const waveDiv = document.querySelector('#menuNav + div');
+        if (waveDiv) waveDiv.style.background = cambios.menu.colorMenu;
+        
+        const wavePath = document.querySelector('#menuNav svg path');
+        if (wavePath) wavePath.setAttribute('fill', cambios.menu.colorMenu);
+        
+        const zigzagDiv = document.querySelector('div[style*="linear-gradient(135deg"]');
+        if (zigzagDiv) {
+            zigzagDiv.style.background = `linear-gradient(135deg, ${cambios.menu.colorMenu} 25%, transparent 25%), linear-gradient(225deg, ${cambios.menu.colorMenu} 25%, transparent 25%)`;
+            zigzagDiv.style.backgroundSize = '20px 20px';
+            zigzagDiv.style.backgroundPosition = '0 0, 10px 0';
+        }
+    }
+    
+    // Aplicar carrusel
+    if (cambios.carrusel) {
+        cambios.carrusel.forEach((slide, index) => {
+            const slideElement = document.querySelectorAll('.carousel-item')[index];
+            if (slideElement) {
+                const titulo = slideElement.querySelector('.display-5');
+                if (titulo) {
+                    titulo.textContent = slide.titulo;
+                    titulo.style.fontFamily = slide.tipoLetra;
+                }
+                
+                const texto = slideElement.querySelector('.lead');
+                if (texto) texto.textContent = slide.texto;
+                
+                const imgFondo = slideElement.querySelector('header > img');
+                if (imgFondo) imgFondo.src = slide.imagenFondo;
+                
+                const imgLateral = slideElement.querySelector('.col-xl-5 img');
+                if (imgLateral) imgLateral.src = slide.imagenLateral;
+                
+                const overlay = slideElement.querySelector('div[style*="rgba"]');
+                if (overlay) {
+                    const rgb = hexToRgb(slide.colorCapa);
+                    overlay.style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${slide.opacidad / 100})`;
+                }
+            }
+        });
+    }
+    
+    // Aplicar línea de texto
+    if (cambios.lineaTexto) {
+        const h4 = document.querySelector('h4[style*="background-color"]');
+        if (h4) {
+            h4.textContent = cambios.lineaTexto.contenido;
+            h4.style.backgroundColor = cambios.lineaTexto.colorFondo;
+            h4.style.color = cambios.lineaTexto.colorTexto;
+            h4.style.fontFamily = cambios.lineaTexto.tipoLetra;
+        }
+    }
+    
+    // Aplicar bienvenida
+    if (cambios.bienvenida) {
+        const section = document.getElementById('scroll-target');
+        if (section) {
+            section.style.backgroundColor = cambios.bienvenida.colorFondo;
+            
+            const img = section.querySelector('img');
+            if (img) img.src = cambios.bienvenida.imagen;
+            
+            const h2 = section.querySelector('h2');
+            if (h2) {
+                h2.textContent = cambios.bienvenida.titulo;
+                h2.style.color = cambios.bienvenida.colorTexto;
+                h2.style.fontFamily = cambios.bienvenida.tipoLetra;
+            }
+            
+            const p = section.querySelector('p');
+            if (p) {
+                p.textContent = cambios.bienvenida.texto;
+                p.style.color = cambios.bienvenida.colorTexto;
+            }
+        }
+    }
+    
+    // Aplicar iconos
+    if (cambios.iconos) {
+        cambios.iconos.forEach((icono, index) => {
+            const img = document.querySelector(`.imagen${index + 1} img`);
+            if (img) img.src = icono.imagen;
+            
+            const iconSection = document.querySelector(`.imagen${index + 1}`).parentElement;
+            const h2 = iconSection.querySelector('h2');
+            if (h2) h2.innerHTML = icono.texto.replace(/\n/g, '<br>');
+        });
+    }
+    
+    // Aplicar productos
+    if (cambios.productos) {
+        cambios.productos.forEach((producto) => {
+            const sections = document.querySelectorAll('section[style*="width: 100%"]');
+            const productSection = sections[parseInt(producto.numero) + 1];
+            
+            if (productSection) {
+                productSection.style.backgroundColor = producto.colorFondo;
+                
+                const imgs = productSection.querySelectorAll('img');
+                if (imgs[0]) imgs[0].src = producto.imagen1;
+                if (imgs[1]) imgs[1].src = producto.imagen2;
+                if (imgs[2]) imgs[2].src = producto.imagen3;
+                
+                const h3 = productSection.querySelector('h3');
+                if (h3) {
+                    h3.textContent = producto.titulo;
+                    h3.style.fontFamily = producto.tipoLetra;
+                }
+                
+                const p = productSection.querySelector('p');
+                if (p) p.textContent = producto.texto;
+            }
+        });
+    }
+    
+    // Aplicar sobre nosotros
+    if (cambios.sobreNosotros) {
+        const card = document.getElementById('nosotros');
+        if (card) {
+            const img = card.querySelector('.card-img');
+            if (img) img.src = cambios.sobreNosotros.imagenFondo;
+            
+            const overlay = card.querySelector('.card-img-overlay');
+            if (overlay) {
+                const rgb = hexToRgb(cambios.sobreNosotros.colorCapa);
+                overlay.style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${cambios.sobreNosotros.opacidadCapa / 100})`;
+            }
+            
+            const title = card.querySelector('.card-title');
+            if (title) title.textContent = cambios.sobreNosotros.tituloCompletoal;
+        }
+        
+        // Aplicar tarjetas
+        cambios.sobreNosotros.tarjetas.forEach((tarjeta, index) => {
+            const cards = document.querySelectorAll('#nosotros .card.card-custom');
+            const card = cards[index];
+            
+            if (card) {
+                const rgb = hexToRgb(tarjeta.colorFondo);
+                card.style.backgroundColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${tarjeta.opacidad / 100})`;
+                
+                const img = card.querySelector('.card-header img');
+                if (img) img.src = tarjeta.icono;
+                
+                const titulo = card.querySelector('.card-title');
+                if (titulo) titulo.textContent = tarjeta.titulo;
+                
+                const texto = card.querySelector('.card-text');
+                if (texto) texto.textContent = tarjeta.texto;
+            }
+        });
+    }
+    
+    // Aplicar testimonio
+    if (cambios.testimonio) {
+        const img = document.querySelector('.rounded-circle.me-3');
+        if (img) img.src = cambios.testimonio.imagen;
+        
+        const testimonialText = document.querySelector('.fs-4.mb-4.fst-italic');
+        if (testimonialText) {
+            testimonialText.textContent = cambios.testimonio.texto;
+            testimonialText.style.fontFamily = cambios.testimonio.tipoLetra;
+        }
+        
+        const nombre = document.querySelector('.fw-bold');
+        if (nombre) nombre.textContent = cambios.testimonio.nombre;
+    }
+}
+
+// ==================== CARGAR CAMBIOS AL INICIO ====================
+document.addEventListener('DOMContentLoaded', function() {
+    const cambiosGuardados = localStorage.getItem('cambiosPagina');
+    if (cambiosGuardados) {
+        try {
+            const cambios = JSON.parse(cambiosGuardados);
+            aplicarCambiosGuardados(cambios);
+            console.log('Cambios guardados cargados correctamente');
+        } catch (error) {
+            console.error('Error al cargar cambios guardados:', error);
+        }
+    }
+});
+
+// ==================== NOTIFICACIONES ====================
+function mostrarNotificacion(mensaje, tipo = 'success') {
+    // Crear elemento de notificación
+    const notificacion = document.createElement('div');
+    notificacion.className = `alert alert-${tipo} position-fixed top-0 start-50 translate-middle-x mt-3`;
+    notificacion.style.zIndex = '9999';
+    notificacion.style.minWidth = '300px';
+    notificacion.textContent = mensaje;
+    
+    document.body.appendChild(notificacion);
+    
+    // Eliminar después de 3 segundos
+    setTimeout(() => {
+        notificacion.style.transition = 'opacity 0.5s';
+        notificacion.style.opacity = '0';
+        setTimeout(() => notificacion.remove(), 500);
+    }, 3000);
+}
+
+// ==================== BOTÓN RESETEAR ====================
+// Agregar botón para resetear cambios (opcional)
+function resetearCambios() {
+    if (confirm('¿Estás seguro de que quieres resetear todos los cambios? Esta acción no se puede deshacer.')) {
+        localStorage.removeItem('cambiosPagina');
+        location.reload();
+        mostrarNotificacion('⚠️ Cambios reseteados. Recargando página...', 'warning');
+    }
+}
+
+console.log('Editor de página cargado correctamente');
 </script>          <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
