@@ -22,7 +22,7 @@ urlpatterns = [
     path('autenticacion/', include('Pagina_administrativa.autenticacion.urls')),
     path('aplicacion/', include('aplicacion.urls')),
     path('api/', include('api_rest.urls')),
-
+    path('', include('aplicacion.urls')),
 
 ]
 
