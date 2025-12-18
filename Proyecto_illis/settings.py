@@ -151,14 +151,34 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Usa BASE_DIR / 'nombre' en lugar de os.path.join para evitar errores de sintaxis
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 STATICFILES_DIRS = [
-os.path.join(BASE_DIR, 'static'),   
+    BASE_DIR / 'static',
 ]
+
+# Configuración optimizada para WhiteNoise
+# Nota: En Django 4.2+ y 5.x se recomienda esta nueva ruta:
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
+#STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATICFILES_DIRS = [
+#os.path.join(BASE_DIR, 'static'),   
+#]
 # Usa el almacenamiento de archivos estáticos comprimido y con hash de WhiteNoise
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 #STATIC_URL = 'static/'
