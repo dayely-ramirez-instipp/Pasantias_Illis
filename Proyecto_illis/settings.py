@@ -29,16 +29,33 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-^*a!lecnh3^oqz)9ddfd((35x3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
+# Esta configuración es obligatoria para formularios en producción (Render)
+CSRF_TRUSTED_ORIGINS = [
+    'https://pasantias-illis.onrender.com',
+    'https://*.onrender.com',
+]
+
+# Asegúrate también de que estas opciones estén así para producción
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
 # DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['pasantias-illis.onrender.com', 'localhost', '127.0.0.1']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-if DEBUG:
-    ALLOWED_HOSTS = ['*']  # Modo desarrollo
-elif RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME) # Modo producción (Render)
+
+#RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+
+#if DEBUG:
+ #   ALLOWED_HOSTS = ['*']  # Modo desarrollo
+#elif RENDER_EXTERNAL_HOSTNAME:
+ #   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME) # Modo producción (Render)
 
 # Application definition
 
