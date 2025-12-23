@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: Pasantias_Illis
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+      python create_superuser.py
+    startCommand: gunicorn Proyecto_illis.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: Proyecto_illis.settings
+      - key: PYTHON_VERSION
+        value: 3.10.9
+      - key: DJANGO_SUPERUSER_USERNAME
+        value: iker
+      - key: DJANGO_SUPERUSER_EMAIL
+        value: avilesiker71@gmail.com
+      - key: DJANGO_SUPERUSER_PASSWORD
+        value: 12345678
+      - key: SECRET_KEY
+        value: 22de3b3c96156cd1dadca003096364c8
