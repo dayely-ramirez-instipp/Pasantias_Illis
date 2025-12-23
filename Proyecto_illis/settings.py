@@ -34,13 +34,19 @@ if RENDER_EXTERNAL_HOSTNAME:
 # CSRF / HTTPS (RENDER)
 # --------------------------------------------------
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.onrender.com",
+    "https://pasantias-illis.onrender.com",
 ]
 
-SESSION_COOKIE_SECURE = not DEBUG
-CSRF_COOKIE_SECURE = not DEBUG
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+CSRF_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_SAMESITE = "None"
+
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = not DEBUG
+SECURE_SSL_REDIRECT = True
+
 
 # --------------------------------------------------
 # APPLICATIONS
