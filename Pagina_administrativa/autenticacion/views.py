@@ -7,28 +7,43 @@ from django.db.models import Q
 from django.conf import settings  # Import necesario para acceder a EMAIL_HOST_USER
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_exempt
-
+from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 
 
 #@cache_page(60*15)  # Cachea la vista por 15 minutos
+#def login_view(request):
+ #   if request.method == 'GET':
+  #      return render(request, 'autenticacion/login.html', {
+   #    })
+    #else:
+    #    user = authenticate(
+     #       request, username=request.POST['inputUsername'], password=request.POST['inputPassword'])
+      #  if user is None:
+       #     return render(request, 'autenticacion/login.html', {
+        #        'error': 'Usuario/email/cédula o contraseña incorrectos'
+         #   })
+       # else:
+        #    login(request, user)
+         #   return redirect('home')
+
 @csrf_protect
 def login_view(request):
-    if request.method == 'GET':
-        return render(request, 'autenticacion/login.html', {
-            'error': None
-        })
-    else:
-        user = authenticate(
-            request, username=request.POST['inputUsername'], password=request.POST['inputPassword'])
-        if user is None:
-            return render(request, 'autenticacion/login.html', {
-                'error': 'Usuario/email/cédula o contraseña incorrectos'
-            })
-        else:
-            login(request, user)
-            return redirect('home')
+    if request.method == "POST":
+        username = request.POST.get("inputUsername")
+        password = request.POST.get("inputPassword")
 
+        user = authenticate(request, username=username, password=password)
+
+        if user is None:
+            return render(request, "autenticacion/login.html", {
+                "error": "Usuario o contraseña incorrectos"
+            })
+
+        login(request, user)
+        return redirect("home")
+
+    return render(request, "autenticacion/login.html")
 
 def logout_view(request):
     logout(request)
