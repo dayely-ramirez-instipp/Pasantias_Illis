@@ -11,7 +11,8 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
-@cache_page(60*15)  # Cachea la vista por 15 minutos
+#@cache_page(60*15)  # Cachea la vista por 15 minutos
+@csrf_protect
 def login_view(request):
     if request.method == 'GET':
         return render(request, 'autenticacion/login.html', {
