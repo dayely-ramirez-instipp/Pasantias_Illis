@@ -44,9 +44,9 @@ CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = "None"
 SESSION_COOKIE_SAMESITE = "None"
 
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = True
-
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "http")
+#SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = os.environ.get("DEBUG", "False").lower() == "false"
 
 # --------------------------------------------------
 # APPLICATIONS
@@ -155,11 +155,7 @@ USE_TZ = True
 #]
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-if DEBUG:
-    STATICFILES_DIRS = [
-        BASE_DIR / "static",
-    ]
+STATICFILES_DIRS = [ BASE_DIR / "static" ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
